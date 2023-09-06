@@ -1,0 +1,199 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=13 format=3 uid="uid://bcbfiahpuj0mu"]
+
+[ext_resource type="Script" path="res://Game_Data/Message/MessageChoice.gd" id="1_qumpp"]
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="1_skvgk"]
+
+[sub_resource type="Resource" id="Resource_djhep"]
+script = ExtResource("1_skvgk")
+is_digivolution_question = false
+line1 = "Now let's finish our fight!"
+line2 = ""
+line3 = ""
+choices = Array[ExtResource("1_qumpp")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_rhpdh"]
+script = ExtResource("1_skvgk")
+is_digivolution_question = false
+line1 = "Then before school I surf the net!"
+line2 = ""
+line3 = ""
+next_message = SubResource("Resource_djhep")
+choices = Array[ExtResource("1_qumpp")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_u3cg1"]
+script = ExtResource("1_skvgk")
+is_digivolution_question = false
+line1 = "Well I wake up early."
+line2 = "So I can stock the store."
+line3 = ""
+next_message = SubResource("Resource_rhpdh")
+choices = Array[ExtResource("1_qumpp")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_brknu"]
+script = ExtResource("1_skvgk")
+is_digivolution_question = false
+line1 = "... Hmm"
+line2 = ""
+line3 = ""
+next_message = SubResource("Resource_u3cg1")
+choices = Array[ExtResource("1_qumpp")]([])
+change_speaker = "Yolei"
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_sltcu"]
+script = ExtResource("1_qumpp")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "How do you have time?"
+next_message = SubResource("Resource_brknu")
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_qaj51"]
+script = ExtResource("1_skvgk")
+is_digivolution_question = false
+line1 = "Kidding, let's just finish the fight."
+line2 = ""
+line3 = ""
+choices = Array[ExtResource("1_qumpp")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_ej6kv"]
+script = ExtResource("1_skvgk")
+is_digivolution_question = false
+line1 = "I know you are but what am I?"
+line2 = ""
+line3 = ""
+next_message = SubResource("Resource_qaj51")
+choices = Array[ExtResource("1_qumpp")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_whfq2"]
+script = ExtResource("1_qumpp")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "She's rude"
+next_message = SubResource("Resource_ej6kv")
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {
+"yolei_you_called_mom_rude": "true"
+}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_xn7x6"]
+script = ExtResource("1_skvgk")
+is_digivolution_question = false
+line1 = "Heck yeah, You're on."
+line2 = ""
+line3 = ""
+choices = Array[ExtResource("1_qumpp")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_po1qd"]
+script = ExtResource("1_qumpp")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "Wanna finish the fight?"
+next_message = SubResource("Resource_xn7x6")
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[resource]
+script = ExtResource("1_skvgk")
+is_digivolution_question = false
+line1 = "I know she cares but, this is exciting."
+line2 = "I'm finally out with a friend who's my height."
+line3 = ""
+choices = Array[ExtResource("1_qumpp")]([SubResource("Resource_sltcu"), SubResource("Resource_whfq2"), SubResource("Resource_po1qd")])
+change_speaker = "Yolei"
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false

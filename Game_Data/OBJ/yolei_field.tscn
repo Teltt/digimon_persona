@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://tuqjhu3ijh68"]
+
+[ext_resource type="Script" path="res://Game_Data/OBJ/npc.gd" id="1_nigb5"]
+[ext_resource type="Texture2D" uid="uid://pojgldk144un" path="res://Game_Data/Graphics/Tex/Yolei.png" id="2_b56mp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qdq36"]
+radius = 24.0
+height = 128.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jtf3u"]
+radius = 24.0
+
+[node name="yolei_field" type="Area2D"]
+y_sort_enabled = true
+position = Vector2(600, 296)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_nigb5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("CapsuleShape2D_qdq36")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_jtf3u")
+
+[node name="Graphics" type="CanvasGroup" parent="."]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Graphics"]
+y_sort_enabled = true
+position = Vector2(3, -39)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b56mp")

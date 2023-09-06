@@ -1,0 +1,164 @@
+[gd_scene load_steps=12 format=3 uid="uid://xb8liftebxpq"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Battle.gd" id="1_qkpax"]
+[ext_resource type="Resource" uid="uid://d12y71yjfx2fr" path="res://Game_Data/Battle/Fighters/Wormmon/Fighter.tres" id="2_8ccpn"]
+[ext_resource type="Resource" uid="uid://xrbdpq8rtwgr" path="res://Game_Data/Battle/Fighters/VMon/Fighter.tres" id="3_vutr0"]
+[ext_resource type="Script" path="res://Game_Data/Battle/ATB.gd" id="6_egk6c"]
+[ext_resource type="Resource" uid="uid://bvrqby0waafdp" path="res://Game_Data/Battle/Fighters/Davis/Character.tres" id="8_0ti8d"]
+[ext_resource type="Texture2D" uid="uid://d0exru2tetu43" path="res://Game_Data/Graphics/Tex/Target.png" id="9_13lrj"]
+[ext_resource type="PackedScene" uid="uid://bn7q7gsaefbqg" path="res://Game_Data/UI_Scenes/battle_menu.tscn" id="10_t00ke"]
+[ext_resource type="PackedScene" uid="uid://b2217nbomwyvi" path="res://Game_Data/UI_Scenes/turn_mgr.tscn" id="13_m2j1j"]
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/turn_mgr.gd" id="14_y08wj"]
+
+[sub_resource type="Animation" id="Animation_gvpp4"]
+resource_name = "PSYCHE"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 3.14159, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uauxv"]
+_data = {
+"PSYCHE": SubResource("Animation_gvpp4")
+}
+
+[node name="Battle" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qkpax")
+enemy_actor = Array[Resource("res://Game_Data/Battle/Fighters/ResActor.gd")]([ExtResource("2_8ccpn")])
+ally_actor = Array[Resource("res://Game_Data/Battle/Fighters/ResActor.gd")]([ExtResource("8_0ti8d"), ExtResource("3_vutr0")])
+
+[node name="Enemies" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Players" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Battle Menu" parent="." node_paths=PackedStringArray("battle") instance=ExtResource("10_t00ke")]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+battle = NodePath("..")
+
+[node name="Turn_MGR" parent="." instance=ExtResource("13_m2j1j")]
+script = ExtResource("14_y08wj")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+script = ExtResource("6_egk6c")
+
+[node name="Digimonpos1" type="Node2D" parent="."]
+position = Vector2(608, 112)
+
+[node name="Digimonpos2" type="Node2D" parent="."]
+position = Vector2(504, 200)
+
+[node name="Digimonpos3" type="Node2D" parent="."]
+position = Vector2(616, 320)
+
+[node name="CharacterPos" type="Node2D" parent="."]
+position = Vector2(736, 128)
+
+[node name="CharacterPos2" type="Node2D" parent="."]
+position = Vector2(632, 216)
+
+[node name="CharacterPos3" type="Node2D" parent="."]
+position = Vector2(744, 336)
+
+[node name="Digimonpos4" type="Node2D" parent="."]
+position = Vector2(180, 98)
+rotation = 0.680912
+
+[node name="Digimonpos5" type="Node2D" parent="."]
+position = Vector2(108, 202)
+rotation = 0.680912
+
+[node name="Digimonpos6" type="Node2D" parent="."]
+position = Vector2(164, 330)
+rotation = 0.680912
+
+[node name="CharacterPos4" type="Node2D" parent="."]
+position = Vector2(308, 114)
+rotation = 0.680912
+
+[node name="CharacterPos5" type="Node2D" parent="."]
+position = Vector2(236, 218)
+rotation = 0.680912
+
+[node name="CharacterPos6" type="Node2D" parent="."]
+position = Vector2(292, 346)
+rotation = 0.680912
+
+[node name="Target" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 0.917647, 0, 0.533333)
+clip_children = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_13lrj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Target"]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_uauxv")
+}
+
+[node name="Node2D" type="Node2D" parent="Target"]
+position = Vector2(10.6667, 5.33333)
+rotation = 5.78146
+
+[node name="ColorRect" type="ColorRect" parent="Target/Node2D"]
+offset_left = -16.8932
+offset_top = 2.1012
+offset_right = 111.107
+offset_bottom = 130.101
+scale = Vector2(2, 2)
+color = Color(1, 1, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Target/Node2D"]
+offset_left = -16.8932
+offset_top = 2.1012
+offset_right = 111.107
+offset_bottom = 131.101
+rotation = 1.5708
+scale = Vector2(2, 2)
+color = Color(0, 1, 1, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Target/Node2D"]
+offset_left = -16.8932
+offset_top = 2.1012
+offset_right = 112.107
+offset_bottom = 131.101
+rotation = 3.14159
+scale = Vector2(2, 2)
+color = Color(1, 1, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Target/Node2D"]
+offset_left = -16.8932
+offset_top = 2.1012
+offset_right = 110.107
+offset_bottom = 130.101
+rotation = -1.5708
+scale = Vector2(2, 2)
+color = Color(0, 1, 1, 1)

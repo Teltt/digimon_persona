@@ -1,0 +1,150 @@
+[gd_scene load_steps=12 format=3 uid="uid://gdej1ptecjny"]
+
+[ext_resource type="Script" path="res://Game_Data/Field/field_base.gd" id="1_h30je"]
+[ext_resource type="PackedScene" uid="uid://tuqjhu3ijh68" path="res://Game_Data/OBJ/yolei_field.tscn" id="2_5jmhr"]
+[ext_resource type="Resource" uid="uid://di2r8yg7kkcq0" path="res://Game_Data/Message/EVENT_Yolei/Yolei_Hangout Request.tres" id="2_lxht0"]
+[ext_resource type="Script" path="res://Game_Data/Flow/scheduler.gd" id="2_qmked"]
+[ext_resource type="Script" path="res://Game_Data/OBJ/FieldTransition.gd" id="2_tjvqw"]
+[ext_resource type="Script" path="res://Game_Data/Flow/schedule.gd" id="3_0hsh1"]
+[ext_resource type="Script" path="res://Game_Data/OBJ/npc.gd" id="7_txk36"]
+[ext_resource type="Resource" uid="uid://bldcxccwduyi7" path="res://Game_Data/Message/Common/System/Go Home?.tres" id="8_3ifi2"]
+
+[sub_resource type="Resource" id="Resource_8wkaj"]
+script = ExtResource("3_0hsh1")
+name = "Yolei"
+from_month = 4
+from_day = 12
+time = 4
+to_month = 4
+to_day = 19
+child_schedule = Array[ExtResource("3_0hsh1")]([])
+message = ExtResource("2_lxht0")
+scene = ExtResource("2_5jmhr")
+spawn_if_function = ""
+spawn_expression = ""
+metadata/_editor_prop_ptr_spawn_location = NodePath("Yolei_Hangout_Spot")
+
+[sub_resource type="Resource" id="Resource_hwwv6"]
+script = ExtResource("2_qmked")
+schedules = Array[ExtResource("3_0hsh1")]([SubResource("Resource_8wkaj")])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jqrwb"]
+radius = 48.6621
+
+[node name="field" type="Node2D"]
+process_mode = 1
+y_sort_enabled = true
+script = ExtResource("1_h30je")
+scheduler = SubResource("Resource_hwwv6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-520, -464, -752, 1136, 1832, 1280, 2136, -352, -688, -480, -680, -736, 2408, -680, 2032, 1560, -968, 1288, -744, -480)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(-664, 904, -216, 1064, 1080, 208, 1736, 400, 1896, 128, 1032, -40, -664, 904, -856, 1136, -160, -216, 2200, -296, 1544, 1024, -856, 1136)
+
+[node name="Default_MC_Pos" type="Marker2D" parent="."]
+position = Vector2(752, 216)
+
+[node name="To_Classroom" type="Area2D" parent="."]
+position = Vector2(768, 120)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_tjvqw")
+teleport_mc_to = Vector2(840, 320)
+field = "res://Game_Data/Field/field_classroom.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="To_Classroom"]
+shape = SubResource("CircleShape2D_jqrwb")
+
+[node name="To_Home" type="Area2D" parent="."]
+position = Vector2(-424, 976)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("7_txk36")
+message = ExtResource("8_3ifi2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="To_Home"]
+shape = SubResource("CircleShape2D_jqrwb")
+
+[node name="Yolei_Hangout_Spot" type="Marker2D" parent="."]
+position = Vector2(536, 264)
+
+[node name="Graphics" type="CanvasGroup" parent="."]
+z_index = -1
+
+[node name="BG" type="Polygon2D" parent="Graphics"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-552, -544, -824, 1184, 1896, 1368, 2216, -432)
+
+[node name="Floor" type="Polygon2D" parent="Graphics"]
+position = Vector2(-248, 128)
+color = Color(0.368627, 0.368627, 0.368627, 1)
+polygon = PackedVector2Array(1280, -168, -416, 776, 32, 936, 1328.89, 80.1841, 1984, 272, 2144, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/Floor"]
+color = Color(1, 1, 1, 0.470588)
+polygon = PackedVector2Array(2128, 24, 2152, 144, 2048, 224, 1872, 128, 1960, -8)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Graphics/Floor"]
+position = Vector2(-2168, 728)
+color = Color(1, 1, 1, 0.470588)
+polygon = PackedVector2Array(2040, 48, 2048, 136, 2024, 200, 1888, 136, 1952, 88)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Graphics/Floor"]
+position = Vector2(-904, -40)
+color = Color(1, 1, 1, 0.470588)
+polygon = PackedVector2Array(1968, 32, 1896, 64, 1872, 48, 1952, 8)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Graphics/Floor"]
+position = Vector2(-2136, 648)
+color = Color(1, 1, 1, 0.470588)
+polygon = PackedVector2Array(1968, 32, 1896, 64, 1872, 40, 1952, 0)
+
+[node name="FrontWall" type="Polygon2D" parent="Graphics"]
+position = Vector2(-248, 128)
+color = Color(0.831373, 0.831373, 0.831373, 1)
+polygon = PackedVector2Array(1280, -168, 1280, -368, 2144, -224, 2144, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/FrontWall"]
+skew = 0.0436332
+color = Color(0.419608, 0.568627, 1, 1)
+polygon = PackedVector2Array(1480, -200, 1912, -128, 1912, -208, 1480, -272)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/FrontWall/Polygon2D"]
+polygon = PackedVector2Array(1688, -240, 1912, -208, 1912, -128, 1480, -200, 1480, -272, 1464, -280, 1464, -200, 1464, -200, 1480, -192, 1912, -120, 1928, -128, 1928, -216, 1912, -224, 1688, -256, 1480, -288, 1464, -280, 1480, -272)
+
+[node name="LeftWall" type="Polygon2D" parent="Graphics"]
+position = Vector2(-248, 128)
+color = Color(0.72549, 0.72549, 0.72549, 1)
+polygon = PackedVector2Array(1280, -168, -416, 776, -416, 552, 1280, -368)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Graphics/LeftWall"]
+position = Vector2(-1264, 1520)
+rotation = -0.60912
+skew = 0.551524
+color = Color(0.419608, 0.568627, 1, 1)
+polygon = PackedVector2Array(1480, -200, 1912, -128, 1912, -208, 1480, -272)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/LeftWall/Polygon2D4"]
+polygon = PackedVector2Array(1688, -240, 1912, -208, 1912, -128, 1480, -200, 1480, -272, 1464, -280, 1464, -200, 1464, -200, 1480, -192, 1912, -120, 1928, -128, 1928, -216, 1912, -224, 1688, -256, 1480, -288, 1464, -280, 1480, -272)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/LeftWall"]
+color = Color(0.521569, 0.278431, 0.211765, 1)
+polygon = PackedVector2Array(968, 8, 968, -160, 1048, -200, 1048, -32)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Graphics/LeftWall"]
+position = Vector2(-536, 296)
+color = Color(0.521569, 0.278431, 0.211765, 1)
+polygon = PackedVector2Array(968, 8, 968, -160, 1048, -200, 1048, -32)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Graphics/LeftWall"]
+position = Vector2(-1232, 688)
+color = Color(0.521569, 0.278431, 0.211765, 1)
+polygon = PackedVector2Array(968, 8, 968, -160, 1048, -200, 1048, -40)

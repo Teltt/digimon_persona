@@ -1,0 +1,161 @@
+[gd_scene load_steps=12 format=3 uid="uid://bmmd1rrnnwlwa"]
+
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/ScrollBox.gd" id="1_wg0j5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bn44"]
+bg_color = Color(0.145098, 0.219608, 0.145098, 1)
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.145098, 0.219608, 0.145098, 1)
+corner_radius_top_left = 664
+corner_radius_top_right = 267
+corner_radius_bottom_right = 91
+corner_radius_bottom_left = 831
+corner_detail = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abadf"]
+bg_color = Color(0.172549, 1, 0.396078, 0.635294)
+border_width_left = 16
+border_width_top = 10
+border_color = Color(0.615686, 0.929412, 0.768627, 1)
+corner_radius_top_left = 154
+corner_radius_top_right = 96
+corner_radius_bottom_right = 161
+corner_radius_bottom_left = 347
+corner_detail = 12
+
+[sub_resource type="ImageTexture" id="ImageTexture_7r1dd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otien"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5icuq"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k8n4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.145098, 0.219608, 0.145098, 0.815686)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sawc5"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.145098, 0.717647, 0.145098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.615686, 0.929412, 0.768627, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnwey"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_xm1rk"]
+VScrollBar/icons/decrement = SubResource("ImageTexture_7r1dd")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_7r1dd")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_7r1dd")
+VScrollBar/icons/increment = SubResource("ImageTexture_7r1dd")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_7r1dd")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_7r1dd")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_otien")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_5icuq")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_0k8n4")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_sawc5")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_lnwey")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_38git"]
+
+[node name="ScrollBox" type="BoxContainer"]
+anchors_preset = -1
+anchor_left = 19.2
+anchor_top = 9.6
+anchor_right = 28.6
+anchor_bottom = 16.2
+offset_left = 7.99878
+offset_top = -280.0
+offset_right = -104.002
+offset_bottom = -368.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_wg0j5")
+metadata/_edit_group_ = true
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_5bn44")
+
+[node name="Panel" type="PanelContainer" parent="Panel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_abadf")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 54
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_xm1rk")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_38git")
+follow_focus = true
+
+[node name="VBoxContainer" type="BoxContainer" parent="Panel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+alignment = 1
+vertical = true

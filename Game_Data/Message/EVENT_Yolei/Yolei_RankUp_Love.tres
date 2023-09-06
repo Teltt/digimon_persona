@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=2 format=3 uid="uid://ckdp6aw1tl8tp"]
+
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="1_r5hi7"]
+
+[resource]
+script = ExtResource("1_r5hi7")
+is_digivolution_question = false
+line1 = "You understand Yolei's affection better now."
+line2 = ""
+line3 = ""
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String](["yolei_rankup_love"])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false

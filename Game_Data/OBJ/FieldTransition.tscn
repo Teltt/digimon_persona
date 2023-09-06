@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://pit6okx7gsxq"]
+
+[ext_resource type="Script" path="res://Game_Data/OBJ/FieldTransition.gd" id="1_58ih0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jqrwb"]
+radius = 48.6621
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(768, 120)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_58ih0")
+teleport_mc_to = Vector2(840, 320)
+field = "res://Game_Data/Field/field_classroom.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jqrwb")

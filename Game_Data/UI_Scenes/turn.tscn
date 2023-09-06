@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm8vrfhidr8dm"]
+
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/turn.gd" id="1_eve27"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c83kc"]
+bg_color = Color(0.6, 0.921569, 0.788235, 0.14902)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.615686, 0.788235, 0.396078, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qshqf"]
+region = Rect2(0, 0, 195, 123)
+
+[node name="Turn" type="Control"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_eve27")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+offset_top = 84.0
+offset_right = 160.0
+offset_bottom = 124.0
+rotation = 3.14159
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c83kc")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 154.0
+offset_bottom = 54.0
+texture = SubResource("AtlasTexture_qshqf")
+expand_mode = 3

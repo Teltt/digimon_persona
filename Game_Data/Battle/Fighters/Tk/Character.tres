@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ResCharacter" load_steps=2 format=3 uid="uid://57ytnimr0rtw"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Fighters/ResCharacter.gd" id="1_hv01d"]
+
+[resource]
+script = ExtResource("1_hv01d")
+name = "Default"

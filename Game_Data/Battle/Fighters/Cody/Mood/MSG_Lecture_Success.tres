@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BattleMessage" load_steps=2 format=3 uid="uid://hvwd4jpl6xvu"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/BattleMessage.gd" id="1_s5l5f"]
+
+[resource]
+script = ExtResource("1_s5l5f")
+close_message_box = false
+line1 = "using <virtue>, <lectured> listened intently."
+line2 = ""
+line3 = ""
+emits_virtues = Array[String]([])
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}

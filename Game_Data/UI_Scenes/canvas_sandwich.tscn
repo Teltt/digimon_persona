@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://3mfhsf2yk286"]
+
+[ext_resource type="Script" path="res://Game_Data/Script/CanvasSandwich.gd" id="1_wp5rr"]
+
+[node name="CanvasSandwich" type="Node2D"]
+script = ExtResource("1_wp5rr")
+
+[node name="CanvasLayer" type="CanvasGroup" parent="."]
+unique_name_in_owner = true
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer"]
+polygon = PackedVector2Array(0, 40, 48, -24, -16, -48, -88, 24)

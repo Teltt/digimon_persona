@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://duqcfx8p45ksl"]
+
+[ext_resource type="Texture2D" uid="uid://cgo8ht5bia1x" path="res://Game_Data/Graphics/Tex/Desk.png" id="1_87wua"]
+
+[node name="Desk" type="CanvasGroup"]
+z_index = -1
+y_sort_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-1.5, -2)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-40, 72, -48, 48, -24, 8, 64, 24, 64, 32, 8, 80)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(6.5, 22)
+texture = ExtResource("1_87wua")

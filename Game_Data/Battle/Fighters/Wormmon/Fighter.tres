@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ResDigimon" load_steps=6 format=3 uid="uid://d12y71yjfx2fr"]
+
+[ext_resource type="Resource" uid="uid://c7g750s4arm2o" path="res://Game_Data/Battle/Fighters/Wormmon/W-Headbutt.tres" id="1_7g860"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Fighters/ResDigimon.gd" id="2_b7774"]
+[ext_resource type="Resource" uid="uid://kf4w0yw8hv2b" path="res://Game_Data/Battle/Fighters/Wormmon/StickyNet.tres" id="2_kyfd4"]
+[ext_resource type="Texture2D" uid="uid://ciau67n68s51a" path="res://Game_Data/Graphics/Tex/Wormmon.png" id="3_0uehn"]
+[ext_resource type="Resource" uid="uid://kyl20vvmukcl" path="res://Game_Data/Battle/Fighters/Wormmon/Stats.tres" id="3_3qdof"]
+
+[resource]
+script = ExtResource("2_b7774")
+type = 8
+stats = ExtResource("3_3qdof")
+level = 1
+starting_health = 100
+attacks = Array[Resource("res://Game_Data/Battle/Attacks/Attack.gd")]([ExtResource("1_7g860"), ExtResource("2_kyfd4")])
+sprite_normal = ExtResource("3_0uehn")
+name = "V-Mon"

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://deqhn48lsgbxx"]
+
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/ATBeatBar.gd" id="1_1isvw"]
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/ATBeatLabel.gd" id="2_mypqf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3n5q"]
+bg_color = Color(0.376471, 0.376471, 0.376471, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.290196, 0.290196, 0.290196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwdha"]
+bg_color = Color(0.615686, 0.788235, 0.396078, 1)
+
+[node name="ATBeatBar" type="ProgressBar"]
+offset_left = 23.088
+offset_top = 46.176
+offset_right = 135.088
+offset_bottom = 74.176
+theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 10
+theme_override_styles/background = SubResource("StyleBoxFlat_p3n5q")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gwdha")
+max_value = 4.0
+step = 1.0
+allow_lesser = true
+show_percentage = false
+script = ExtResource("1_1isvw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.321569, 0.698039, 0.243137, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+text = "1/4"
+horizontal_alignment = 1
+script = ExtResource("2_mypqf")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="value_changed" from="." to="." method="_on_at_beat_bar_value_changed"]
+[connection signal="value_changed" from="." to="Label" method="_on_at_beat_bar_value_changed"]

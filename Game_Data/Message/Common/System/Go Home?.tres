@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=5 format=3 uid="uid://bldcxccwduyi7"]
+
+[ext_resource type="Script" path="res://Game_Data/Message/MessageChoice.gd" id="1_424lc"]
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="1_ajt4o"]
+
+[sub_resource type="Resource" id="Resource_iahaq"]
+script = ExtResource("1_424lc")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "Yes"
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_ytuud"]
+script = ExtResource("1_424lc")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "No"
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[resource]
+script = ExtResource("1_ajt4o")
+is_digivolution_question = false
+line1 = "Go Home and Progress time to Evening?"
+line2 = ""
+line3 = ""
+choices = Array[ExtResource("1_424lc")]([SubResource("Resource_iahaq"), SubResource("Resource_ytuud")])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String](["transition_to_bedroom"])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false

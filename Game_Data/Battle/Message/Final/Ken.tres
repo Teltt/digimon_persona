@@ -1,0 +1,80 @@
+[gd_resource type="Resource" script_class="BattleMessage" load_steps=19 format=3 uid="uid://f217w44b8o2n"]
+
+[ext_resource type="Resource" uid="uid://clxbykvdoy0lw" path="res://Game_Data/Battle/Fighters/Ken/Character.tres" id="1_aktgs"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/BattleMessage.gd" id="1_yrrov"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Mood/MoodParticipant.gd" id="2_hwkaf"]
+[ext_resource type="Resource" uid="uid://57ytnimr0rtw" path="res://Game_Data/Battle/Fighters/Tk/Character.tres" id="3_16svd"]
+[ext_resource type="Resource" uid="uid://cs1y868th8ubt" path="res://Game_Data/Battle/Fighters/Kari/Character.tres" id="4_3xuur"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Mood/ParticipantDictionary.gd" id="5_wknpk"]
+[ext_resource type="Resource" uid="uid://bq3wly5nte6dq" path="res://Game_Data/Battle/Message/Final/KenInvestigate.tres" id="7_p4mia"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/VirtueMessage.gd" id="8_qgxbo"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/DictionaryVirtueMessage.gd" id="9_8lisc"]
+
+[sub_resource type="Resource" id="Resource_hcvwi"]
+script = ExtResource("2_hwkaf")
+mood = ""
+message_index = 0
+identifier = "<ken>"
+actor_res = ExtResource("1_aktgs")
+
+[sub_resource type="Resource" id="Resource_mpqjk"]
+script = ExtResource("2_hwkaf")
+mood = ""
+message_index = 0
+identifier = "<tk>"
+actor_res = ExtResource("3_16svd")
+
+[sub_resource type="Resource" id="Resource_cparr"]
+script = ExtResource("2_hwkaf")
+mood = ""
+message_index = 0
+identifier = "<kari>"
+actor_res = ExtResource("4_3xuur")
+
+[sub_resource type="Resource" id="Resource_0sxy4"]
+script = ExtResource("2_hwkaf")
+mood = ""
+message_index = 0
+identifier = "<davis>"
+
+[sub_resource type="Resource" id="Resource_vkff2"]
+script = ExtResource("5_wknpk")
+dictionary = Array[ExtResource("2_hwkaf")]([SubResource("Resource_hcvwi"), SubResource("Resource_mpqjk"), SubResource("Resource_cparr"), SubResource("Resource_0sxy4")])
+
+[sub_resource type="Resource" id="Resource_rqhov"]
+script = ExtResource("8_qgxbo")
+virtue = "Friendship"
+msg = ExtResource("7_p4mia")
+
+[sub_resource type="Resource" id="Resource_oip5f"]
+script = ExtResource("8_qgxbo")
+virtue = "Kindness"
+msg = ExtResource("7_p4mia")
+
+[sub_resource type="Resource" id="Resource_n37xw"]
+script = ExtResource("8_qgxbo")
+virtue = "Hope"
+msg = ExtResource("7_p4mia")
+
+[sub_resource type="Resource" id="Resource_1ltf5"]
+script = ExtResource("9_8lisc")
+dictionary = Array[ExtResource("8_qgxbo")]([SubResource("Resource_rqhov"), SubResource("Resource_oip5f"), SubResource("Resource_n37xw")])
+
+[resource]
+script = ExtResource("1_yrrov")
+close_message_box = false
+time = 15
+drain = 7
+participants = SubResource("Resource_vkff2")
+line1 = "<ken> is on a cross."
+line2 = "is he worth it?"
+line3 = ""
+emits_virtues = Array[String]([])
+virtue_response = SubResource("Resource_1ltf5")
+loops = true
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}

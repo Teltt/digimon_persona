@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=4 format=3 uid="uid://beg75olskxc1w"]
+
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="1_a234g"]
+[ext_resource type="Resource" uid="uid://dmnyv2v3sugg7" path="res://Game_Data/Message/EVENT_Ken/Event_Intro/Ken_Introduces_Himself.tres" id="1_sopre"]
+
+[sub_resource type="Resource" id="Resource_lryft"]
+script = ExtResource("1_a234g")
+is_digivolution_question = false
+line1 = "Please welcome Ken Ichijoji of Odaiba High."
+line2 = ""
+line3 = ""
+next_message = ExtResource("1_sopre")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[resource]
+script = ExtResource("1_a234g")
+is_digivolution_question = false
+line1 = "Class, today we have a special guest."
+line2 = ""
+line3 = ""
+next_message = SubResource("Resource_lryft")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = "Teacher"
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false

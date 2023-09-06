@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterBond" load_steps=2 format=3 uid="uid://dxx7fknx77mvx"]
+
+[ext_resource type="Script" path="res://Game_Data/Social/CharacterBond.gd" id="1_ypjda"]
+
+[resource]
+script = ExtResource("1_ypjda")
+character_name = "Default"
+max_level = 7
+crest_name = "love"
+requirements = Array[int]([])
+rankup_events = Array[PackedScene]([])
+hangout_events = Array[PackedScene]([])

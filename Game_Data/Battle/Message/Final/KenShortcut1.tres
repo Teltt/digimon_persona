@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="BattleMessage" load_steps=3 format=3 uid="uid://csqcve530i2hb"]
+
+[ext_resource type="Resource" uid="uid://cxc5f55ym58ln" path="res://Game_Data/Battle/Message/Final/KenFinal.tres" id="1_b74fk"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/BattleMessage.gd" id="1_og6pv"]
+
+[resource]
+script = ExtResource("1_og6pv")
+close_message_box = false
+time = 15
+drain = 7
+line1 = "> <davis> punches <tk> in the face."
+line2 = "\"What the heck is going on?\""
+line3 = "<virtue> was paramount."
+emits_virtues = Array[String]([])
+dont_care_message = ExtResource("1_b74fk")
+loops = false
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}

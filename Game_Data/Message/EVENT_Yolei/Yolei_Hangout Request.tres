@@ -1,0 +1,102 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=8 format=3 uid="uid://di2r8yg7kkcq0"]
+
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="1_6hta7"]
+[ext_resource type="Script" path="res://Game_Data/Message/MessageChoice.gd" id="2_rnpio"]
+
+[sub_resource type="Resource" id="Resource_fc3py"]
+script = ExtResource("1_6hta7")
+is_digivolution_question = false
+line1 = "Lets get rolling already then!"
+line2 = ""
+line3 = ""
+choices = Array[ExtResource("2_rnpio")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_0rrs3"]
+script = ExtResource("2_rnpio")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "Sure!"
+next_message = SubResource("Resource_fc3py")
+function_names = Array[String](["yolei_hangout"])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_gtonu"]
+script = ExtResource("2_rnpio")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "Not right now."
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_gnbsj"]
+script = ExtResource("1_6hta7")
+is_digivolution_question = false
+line1 = "> You feel that Yolei"
+line2 = "<sl_msg>"
+line3 = ""
+choices = Array[ExtResource("2_rnpio")]([])
+change_speaker = "None"
+portrait_file_name = ""
+function_names = Array[String](["check_yolei_bond"])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_w8cmq"]
+script = ExtResource("2_rnpio")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "Check Bond"
+next_message = SubResource("Resource_gnbsj")
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[resource]
+script = ExtResource("1_6hta7")
+is_digivolution_question = false
+line1 = "Hi Davis, I was just going to go "
+line2 = "somewhere fun!"
+line3 = "Do you wanna come with?"
+choices = Array[ExtResource("2_rnpio")]([SubResource("Resource_0rrs3"), SubResource("Resource_gtonu"), SubResource("Resource_w8cmq")])
+change_speaker = "Yolei"
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false

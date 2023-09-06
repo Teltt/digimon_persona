@@ -1,0 +1,173 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=10 format=3 uid="uid://coehbebus6whu"]
+
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="1_nvrgw"]
+
+[sub_resource type="Resource" id="Resource_bbgnc"]
+script = ExtResource("1_nvrgw")
+is_digivolution_question = false
+line1 = "UGH."
+line2 = ""
+line3 = ""
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_8juad"]
+script = ExtResource("1_nvrgw")
+is_digivolution_question = false
+line1 = "I'm out with a friend,"
+line2 = "and she has to call me."
+line3 = ""
+next_message = SubResource("Resource_bbgnc")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_xkm4p"]
+script = ExtResource("1_nvrgw")
+is_digivolution_question = false
+line1 = "Who am I kidding?"
+line2 = "I'm super mad."
+line3 = ""
+next_message = SubResource("Resource_8juad")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_8usl4"]
+script = ExtResource("1_nvrgw")
+is_digivolution_question = false
+line1 = "..."
+line2 = "Well, Nothing to it but to go back."
+line3 = ""
+next_message = SubResource("Resource_xkm4p")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_n0kmj"]
+script = ExtResource("1_nvrgw")
+is_digivolution_question = false
+line1 = "That was my Mom."
+line2 = "She needs me back at the store."
+line3 = ""
+next_message = SubResource("Resource_8usl4")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_cmfao"]
+script = ExtResource("1_nvrgw")
+is_digivolution_question = false
+line1 = "Bye mom, I love you!"
+line2 = ""
+line3 = ""
+next_message = SubResource("Resource_n0kmj")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = "Yolei"
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_qi6ih"]
+script = ExtResource("1_nvrgw")
+is_digivolution_question = false
+line1 = "... Uhuh, I'll be home in a jiffy."
+line2 = ""
+line3 = ""
+next_message = SubResource("Resource_cmfao")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_gkcbm"]
+script = ExtResource("1_nvrgw")
+is_digivolution_question = false
+line1 = "Hello, mom?"
+line2 = ""
+line3 = ""
+next_message = SubResource("Resource_qi6ih")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = "Yolei"
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[resource]
+script = ExtResource("1_nvrgw")
+is_digivolution_question = false
+line1 = "*Ping *ping"
+line2 = ""
+line3 = ""
+next_message = SubResource("Resource_gkcbm")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = "Phone"
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false

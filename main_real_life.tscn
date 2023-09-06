@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgbw63maye64w"]
+
+[ext_resource type="Script" path="res://main_real_life.gd" id="1_hmi25"]
+[ext_resource type="PackedScene" uid="uid://b03aadav3mbkg" path="res://Game_Data/UI_Scenes/msg_box.tscn" id="1_ifdf8"]
+[ext_resource type="PackedScene" uid="uid://xb8liftebxpq" path="res://Game_Data/Battle/battle.tscn" id="4_cdjs2"]
+[ext_resource type="PackedScene" uid="uid://dk58hfsmunixh" path="res://Game_Data/OBJ/mc_field.tscn" id="4_d1r0y"]
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/Camera.gd" id="5_it8kr"]
+[ext_resource type="PackedScene" uid="uid://0fq82b2lgc4j" path="res://Game_Data/UI_Scenes/date.tscn" id="6_e36om"]
+[ext_resource type="PackedScene" uid="uid://dcofivtauja60" path="res://Game_Data/UI_Scenes/rank_up.tscn" id="6_lpva3"]
+[ext_resource type="PackedScene" uid="uid://b2id47af7s0m6" path="res://Game_Data/UI_Scenes/loadfade.tscn" id="8_5q671"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m77pd"]
+size = Vector2(1152, 648)
+
+[node name="Main" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_hmi25")
+
+[node name="field@mc_field" parent="." instance=ExtResource("4_d1r0y")]
+position = Vector2(552, 280)
+
+[node name="Battle" parent="." instance=ExtResource("4_cdjs2")]
+
+[node name="Camera" type="CharacterBody2D" parent="."]
+process_mode = 3
+z_index = 11
+position = Vector2(576, 324)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("5_it8kr")
+
+[node name="Box" type="CollisionShape2D" parent="Camera"]
+shape = SubResource("RectangleShape2D_m77pd")
+
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+
+[node name="Area2D" type="Node2D" parent="Camera"]
+position = Vector2(0, -7)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="msg_box" parent="CanvasLayer" instance=ExtResource("1_ifdf8")]
+offset_top = -4.0
+offset_bottom = -4.0
+
+[node name="Rank Up" parent="CanvasLayer" instance=ExtResource("6_lpva3")]
+
+[node name="date" parent="CanvasLayer" instance=ExtResource("6_e36om")]
+z_index = 4
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="loadfade" parent="CanvasLayer" instance=ExtResource("8_5q671")]
+z_index = 3
+offset_left = -16424.0
+offset_top = -17484.0
+offset_right = 24984.0
+offset_bottom = 14340.0

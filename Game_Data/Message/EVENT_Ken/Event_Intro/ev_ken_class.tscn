@@ -1,0 +1,270 @@
+[gd_scene load_steps=20 format=3 uid="uid://08168tbygiw1"]
+
+[ext_resource type="PackedScene" uid="uid://cjqxohlii6pj3" path="res://Game_Data/Field/field_classroom.tscn" id="1_6psgb"]
+[ext_resource type="Script" path="res://Game_Data/Flow/event.gd" id="1_ewc7b"]
+[ext_resource type="Script" path="res://Game_Data/Flow/scheduler.gd" id="2_ol7nd"]
+[ext_resource type="Script" path="res://Game_Data/OBJ/EventSprite.gd" id="3_11jkx"]
+[ext_resource type="Texture2D" uid="uid://ca0po1lewuqmq" path="res://Game_Data/Graphics/Tex/Ken.png" id="5_7aubn"]
+[ext_resource type="Resource" uid="uid://bd24arq7lcfqy" path="res://Game_Data/Message/EVENT_Ken/Event_Intro/RealGossip.tres" id="5_278ur"]
+[ext_resource type="Texture2D" uid="uid://tjldm5fqc0hb" path="res://Game_Data/Graphics/Tex/Davis.png" id="7_k5rd6"]
+[ext_resource type="Animation" uid="uid://wgaj1jouwro6" path="res://Game_Data/Graphics/Anim/jump.res" id="8_iusbq"]
+[ext_resource type="Animation" uid="uid://cx8cnkkwa4lrl" path="res://Game_Data/Graphics/Anim/walk.res" id="9_0x1ek"]
+[ext_resource type="Resource" uid="uid://beg75olskxc1w" path="res://Game_Data/Message/EVENT_Ken/Event_Intro/KenIntro.tres" id="9_iyyx1"]
+[ext_resource type="Texture2D" uid="uid://bga5d7xv5scpu" path="res://Game_Data/Graphics/Tex/Female.png" id="11_r2qtf"]
+[ext_resource type="Texture2D" uid="uid://dkm1g5sa6ukio" path="res://Game_Data/Graphics/Tex/Male.png" id="12_hsjq2"]
+
+[sub_resource type="Resource" id="Resource_lydtd"]
+script = ExtResource("2_ol7nd")
+schedules = Array[Resource("res://Game_Data/Flow/schedule.gd")]([])
+
+[sub_resource type="Animation" id="Animation_iubmx"]
+resource_name = "event"
+length = 1.8947
+step = 0.05
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.05, 0.15, 0.55, 0.6, 1.55, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [ExtResource("9_iyyx1")],
+"method": &"play_message_set"
+}, {
+"args": [],
+"method": &"s"
+}, {
+"args": [],
+"method": &"s"
+}, {
+"args": [ExtResource("5_278ur")],
+"method": &"play_message_set"
+}, {
+"args": [],
+"method": &"s"
+}, {
+"args": [ExtResource("1_6psgb")],
+"method": &"load_new_field"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nosy Student")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.55, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["jump"],
+"method": &"play_animation"
+}, {
+"args": [],
+"method": &"stop_animation"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nhouu"]
+_data = {
+"event": SubResource("Animation_iubmx")
+}
+
+[sub_resource type="Animation" id="Animation_2pa3e"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q7fes"]
+_data = {
+"jump": ExtResource("8_iusbq"),
+"new_animation": SubResource("Animation_2pa3e"),
+"walk": ExtResource("9_0x1ek")
+}
+
+[sub_resource type="Animation" id="Animation_w33kv"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x30yk"]
+_data = {
+"jump": ExtResource("8_iusbq"),
+"new_animation": SubResource("Animation_w33kv"),
+"walk": ExtResource("9_0x1ek")
+}
+
+[node name="EV_Ken_CLASS" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_ewc7b")
+
+[node name="field" parent="." instance=ExtResource("1_6psgb")]
+scheduler = SubResource("Resource_lydtd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_process_mode = 2
+libraries = {
+"": SubResource("AnimationLibrary_nhouu")
+}
+
+[node name="Yolei" type="Node2D" parent="."]
+position = Vector2(560, 200)
+script = ExtResource("3_11jkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Yolei"]
+position = Vector2(0, -42)
+rotation = -0.314159
+scale = Vector2(0.5, 0.5)
+skew = 0.289725
+texture = ExtResource("5_7aubn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Yolei"]
+libraries = {
+"": SubResource("AnimationLibrary_q7fes")
+}
+
+[node name="MC" type="Node2D" parent="."]
+position = Vector2(848, 312)
+script = ExtResource("3_11jkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="MC"]
+position = Vector2(0, -42)
+rotation = 0.314159
+scale = Vector2(0.5, 0.5)
+skew = -0.289725
+texture = ExtResource("7_k5rd6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MC"]
+libraries = {
+"": SubResource("AnimationLibrary_x30yk")
+}
+
+[node name="Teacher" type="Node2D" parent="."]
+position = Vector2(640, 216)
+script = ExtResource("3_11jkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Teacher"]
+position = Vector2(0, -42)
+rotation = 0.314159
+scale = Vector2(0.5, 0.5)
+skew = -0.289725
+texture = ExtResource("11_r2qtf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Teacher"]
+libraries = {
+"": SubResource("AnimationLibrary_x30yk")
+}
+
+[node name="Nosy Student" type="Node2D" parent="."]
+position = Vector2(336, 336)
+script = ExtResource("3_11jkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nosy Student"]
+position = Vector2(0, -42)
+rotation = 0.314159
+scale = Vector2(0.5, 0.5)
+skew = -0.289725
+texture = ExtResource("12_hsjq2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nosy Student"]
+libraries = {
+"": SubResource("AnimationLibrary_x30yk")
+}
+
+[node name="Male2" type="Node2D" parent="."]
+position = Vector2(568, 376)
+script = ExtResource("3_11jkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Male2"]
+position = Vector2(0, -42)
+rotation = 0.314159
+scale = Vector2(0.5, 0.5)
+skew = -0.289725
+texture = ExtResource("12_hsjq2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Male2"]
+libraries = {
+"": SubResource("AnimationLibrary_x30yk")
+}
+
+[node name="Female" type="Node2D" parent="."]
+position = Vector2(456, 352)
+script = ExtResource("3_11jkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Female"]
+position = Vector2(0, -42)
+rotation = 0.314159
+scale = Vector2(0.5, 0.5)
+skew = -0.289725
+texture = ExtResource("11_r2qtf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Female"]
+libraries = {
+"": SubResource("AnimationLibrary_x30yk")
+}
+
+[node name="Female2" type="Node2D" parent="."]
+position = Vector2(696, 400)
+script = ExtResource("3_11jkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Female2"]
+position = Vector2(0, -42)
+rotation = 0.314159
+scale = Vector2(0.5, 0.5)
+skew = -0.289725
+texture = ExtResource("11_r2qtf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Female2"]
+libraries = {
+"": SubResource("AnimationLibrary_x30yk")
+}
+
+[node name="Female4" type="Node2D" parent="."]
+position = Vector2(256, 416)
+script = ExtResource("3_11jkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Female4"]
+position = Vector2(0, -42)
+rotation = 0.314159
+scale = Vector2(0.5, 0.5)
+skew = -0.289725
+texture = ExtResource("11_r2qtf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Female4"]
+libraries = {
+"": SubResource("AnimationLibrary_x30yk")
+}
+
+[node name="Female3" type="Node2D" parent="."]
+position = Vector2(608, 504)
+script = ExtResource("3_11jkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Female3"]
+position = Vector2(0, -42)
+rotation = 0.314159
+scale = Vector2(0.5, 0.5)
+skew = -0.289725
+texture = ExtResource("11_r2qtf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Female3"]
+libraries = {
+"": SubResource("AnimationLibrary_x30yk")
+}
+
+[node name="Male3" type="Node2D" parent="."]
+position = Vector2(360, 464)
+script = ExtResource("3_11jkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Male3"]
+position = Vector2(0, -42)
+rotation = 0.314159
+scale = Vector2(0.5, 0.5)
+skew = -0.289725
+texture = ExtResource("12_hsjq2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Male3"]
+libraries = {
+"": SubResource("AnimationLibrary_x30yk")
+}
+
+[node name="Camera_Pos" type="Marker2D" parent="."]
+position = Vector2(640, 320)

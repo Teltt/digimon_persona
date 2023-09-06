@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CharacterBond" load_steps=2 format=3 uid="uid://dflu44nq7sfd1"]
+
+[ext_resource type="Script" path="res://Game_Data/Social/CharacterBond.gd" id="1_rlin2"]
+
+[resource]
+script = ExtResource("1_rlin2")
+max_level = 7
+crest_name = "sincerity"
+requirements = Array[int]([])
+rankup_events = Array[PackedScene]([])
+hangout_events = Array[PackedScene]([])

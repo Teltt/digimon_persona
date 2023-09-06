@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://du8b8mpoy77bd"]
+
+[ext_resource type="Texture2D" uid="uid://cas6bixlewsms" path="res://Game_Data/Graphics/Tex/ArcadeMachine.png" id="1_uws2f"]
+
+[node name="ArcadeMachine" type="CanvasGroup"]
+position = Vector2(-192, -280)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color(1, 0.572549, 1, 1)
+polygon = PackedVector2Array(192, 224, 216, 208, 248, 240, 192, 280, 128, 256, 160, 240)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Polygon2D2"]
+color = Color(0.188235, 0.372549, 1, 1)
+polygon = PackedVector2Array(192, 224, 216, 208, 184, 152, 128, 184, 128, 256, 160, 240)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Polygon2D2/Polygon2D3"]
+color = Color(0.00784314, 0.203922, 0.321569, 1)
+polygon = PackedVector2Array(192, 216, 208, 208, 184, 160, 136, 184, 160, 232)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Polygon2D2/Polygon2D3/Polygon2D4"]
+color = Color(0.745098, 0.886275, 0.996078, 1)
+polygon = PackedVector2Array(168, 184, 184, 192, 176, 168)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+color = Color(0.686275, 0, 0.701961, 1)
+polygon = PackedVector2Array(216, 216, 240, 240, 192, 272, 168, 248)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Polygon2D3"]
+color = Color(0.262745, 0, 0.270588, 1)
+polygon = PackedVector2Array(216, 224, 224, 232, 216, 240, 208, 232)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Polygon2D3"]
+position = Vector2(-16, 8)
+color = Color(0.262745, 0, 0.270588, 1)
+polygon = PackedVector2Array(216, 224, 224, 232, 216, 240, 208, 232)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Polygon2D3"]
+position = Vector2(-32, 16)
+color = Color(0.262745, 0, 0.270588, 1)
+polygon = PackedVector2Array(216, 224, 224, 232, 216, 240, 208, 232)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Polygon2D3"]
+position = Vector2(-16, 24)
+color = Color(0.262745, 0, 0.270588, 1)
+polygon = PackedVector2Array(216, 224, 224, 232, 216, 240, 208, 232)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Polygon2D3"]
+position = Vector2(0, 16)
+color = Color(0.262745, 0, 0.270588, 1)
+polygon = PackedVector2Array(216, 224, 224, 232, 216, 240, 208, 232)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.858824, 0.215686, 0.247059, 1)
+polygon = PackedVector2Array(192, 280, 248, 240, 248, 312, 192, 352)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(128, 320, 192, 352, 248, 312, 248, 240, 184, 216, 128, 256)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(216, 256)
+texture = ExtResource("1_uws2f")

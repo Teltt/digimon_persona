@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ResCharacter" load_steps=2 format=3 uid="uid://dpkad4r4f28ro"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Fighters/ResCharacter.gd" id="1_sejmc"]
+
+[resource]
+script = ExtResource("1_sejmc")
+name = "Cody"

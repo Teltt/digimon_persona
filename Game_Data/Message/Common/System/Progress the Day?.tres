@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=5 format=3 uid="uid://rp0dgmer60e7"]
+
+[ext_resource type="Script" path="res://Game_Data/Message/MessageChoice.gd" id="1_2jisi"]
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="1_gkpyb"]
+
+[sub_resource type="Resource" id="Resource_4qi1d"]
+script = ExtResource("1_2jisi")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "Yes"
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_nullw"]
+script = ExtResource("1_2jisi")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "No"
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[resource]
+script = ExtResource("1_gkpyb")
+is_digivolution_question = false
+line1 = "Sleep until next morning?"
+line2 = ""
+line3 = ""
+choices = Array[ExtResource("1_2jisi")]([SubResource("Resource_4qi1d"), SubResource("Resource_nullw")])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String](["progress_date_normally"])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false

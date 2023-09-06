@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://0fq82b2lgc4j"]
+
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/date.gd" id="1_7w0bs"]
+
+[node name="date" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+script = ExtResource("1_7w0bs")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.172549, 1, 0.396078, 0.635294)
+polygon = PackedVector2Array(960, 0, 912, 0, 912, 8, 960, 8, 960, 24, 1056, 24, 1056, 48, 1088, 48, 1088, 64, 1104, 64, 1104, 128, 1144, 128, 1144, 312, 1152, 312, 1152, 0)
+
+[node name="Day" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 76.0
+offset_right = 1120.0
+offset_bottom = 124.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[right]Thursday"
+
+[node name="Date" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 912.0
+offset_top = 32.0
+offset_right = 1088.0
+offset_bottom = 112.0
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "[right]4/12"
+
+[node name="Month" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 16.0
+offset_right = 1056.0
+offset_bottom = 56.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[right]April"
+
+[node name="TimeOfDay" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 864.0
+offset_top = -4.0
+offset_right = 1032.0
+offset_bottom = 36.0
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[right]Morning"

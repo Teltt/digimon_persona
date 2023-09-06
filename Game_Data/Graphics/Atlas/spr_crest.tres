@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dohoiec3wbtbf"]
+
+[ext_resource type="Texture2D" uid="uid://bt3sv6f025g8a" path="res://Game_Data/Graphics/Tex/Crests.png" id="1_2ccmt"]
+
+[resource]
+atlas = ExtResource("1_2ccmt")
+region = Rect2(0, 0, 1672, 478)

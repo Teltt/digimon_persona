@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=4 format=3 uid="uid://k6dgo5atnqh4"]
+
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="2_4n3n7"]
+
+[sub_resource type="Resource" id="Resource_61l8l"]
+script = ExtResource("2_4n3n7")
+is_digivolution_question = false
+line1 = "> You file this information away for later."
+line2 = ""
+line3 = ""
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_atbjo"]
+script = ExtResource("2_4n3n7")
+is_digivolution_question = false
+line1 = "> It seems that Ken will be tutoring here until"
+line2 = " the end of July."
+line3 = ""
+next_message = SubResource("Resource_61l8l")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = "None"
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[resource]
+script = ExtResource("2_4n3n7")
+is_digivolution_question = false
+line1 = "Ken here will be our teaching assistant"
+line2 = " [color=orange]throughout July. [/color]"
+line3 = "Please feel free to study with him."
+next_message = SubResource("Resource_atbjo")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = "Teacher"
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false

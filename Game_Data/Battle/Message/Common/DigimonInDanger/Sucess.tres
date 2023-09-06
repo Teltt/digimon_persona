@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="BattleMessage" load_steps=6 format=3 uid="uid://dv06uu474r0j7"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Mood/MoodParticipant.gd" id="1_wdpv1"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Mood/ParticipantDictionary.gd" id="2_nf0p5"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/BattleMessage.gd" id="3_sq1gr"]
+
+[sub_resource type="Resource" id="Resource_i1vey"]
+script = ExtResource("1_wdpv1")
+mood = ""
+message_index = 0
+identifier = "<actor2>"
+
+[sub_resource type="Resource" id="Resource_g3f87"]
+script = ExtResource("2_nf0p5")
+dictionary = Array[ExtResource("1_wdpv1")]([SubResource("Resource_i1vey")])
+
+[resource]
+script = ExtResource("3_sq1gr")
+close_message_box = false
+time = 10
+drain = 7
+participants = SubResource("Resource_g3f87")
+line1 = "<actor2> gathered their <virtue>..."
+line2 = "and <actor> is saved!"
+line3 = ""
+emits_virtues = Array[String]([])
+loops = false
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}

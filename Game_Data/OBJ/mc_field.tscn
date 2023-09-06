@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://dk58hfsmunixh"]
+
+[ext_resource type="Script" path="res://Game_Data/Script/MC_Field.gd" id="1_m4sbd"]
+[ext_resource type="Texture2D" uid="uid://tjldm5fqc0hb" path="res://Game_Data/Graphics/Tex/Davis.png" id="2_msisc"]
+[ext_resource type="Script" path="res://Game_Data/Script/MC_InteractArea.gd" id="3_weqll"]
+[ext_resource type="Animation" uid="uid://cx8cnkkwa4lrl" path="res://Game_Data/Graphics/Anim/walk.res" id="4_8chmc"]
+[ext_resource type="Animation" uid="uid://wgaj1jouwro6" path="res://Game_Data/Graphics/Anim/jump.res" id="5_kkae2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hb0lb"]
+radius = 24.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vo3t2"]
+_data = {
+"jump": ExtResource("5_kkae2"),
+"walk": ExtResource("4_8chmc")
+}
+
+[node name="mc_field" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_m4sbd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -10, -14, 1, 0, 9, 11, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -42)
+rotation = -0.314159
+scale = Vector2(0.5, 0.5)
+skew = 0.289725
+texture = ExtResource("2_msisc")
+region_rect = Rect2(44, 137, 59, 105)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+y_sort_enabled = true
+
+[node name="Interact" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_weqll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact"]
+position = Vector2(16, 0)
+shape = SubResource("CircleShape2D_hb0lb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vo3t2")
+}

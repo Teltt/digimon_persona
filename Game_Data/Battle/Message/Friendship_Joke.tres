@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="BattleMessage" load_steps=3 format=3 uid="uid://bcdogaeu83occ"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/BattleMessage.gd" id="1_kqohx"]
+
+[sub_resource type="Resource" id="Resource_xx6ek"]
+script = ExtResource("1_kqohx")
+close_message_box = true
+line1 = "<actor> repeated the joke on deaf ears"
+line2 = ""
+line3 = ""
+emits_virtues = Array[String]([])
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+
+[resource]
+script = ExtResource("1_kqohx")
+close_message_box = false
+line1 = "<actor> made a joke."
+line2 = ""
+line3 = ""
+emits_virtues = Array[String]([])
+dont_care_message = SubResource("Resource_xx6ek")
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}

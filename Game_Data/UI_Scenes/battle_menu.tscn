@@ -1,0 +1,268 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/battle_menu.gd" id="1_12oum"]
+[ext_resource type="PackedScene" uid="uid://bok8v1br3e0vy" path="res://Game_Data/UI_Scenes/skill.tscn" id="2_j80ei"]
+[ext_resource type="PackedScene" uid="uid://bmmd1rrnnwlwa" path="res://Game_Data/UI_Scenes/scroll_box.tscn" id="3_5j1me"]
+[ext_resource type="PackedScene" uid="uid://b2l6ra6wylpnh" path="res://Game_Data/UI_Scenes/battle_msg.tscn" id="4_22lf0"]
+[ext_resource type="AudioStream" path="res://Game_Data/Audio/SFX/battleTurn.ogg" id="6_0klou"]
+[ext_resource type="AudioStream" path="res://Game_Data/Audio/SFX/battleTurnEnd.ogg" id="7_4auat"]
+[ext_resource type="AudioStream" path="res://Game_Data/Audio/SFX/select.ogg" id="8_xt8dq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bn44"]
+bg_color = Color(0.145098, 0.219608, 0.145098, 1)
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.145098, 0.219608, 0.145098, 1)
+corner_radius_top_left = 664
+corner_radius_top_right = 267
+corner_radius_bottom_right = 91
+corner_radius_bottom_left = 831
+corner_detail = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abadf"]
+bg_color = Color(0.172549, 1, 0.396078, 0.635294)
+border_width_left = 16
+border_width_top = 10
+border_color = Color(0.615686, 0.929412, 0.768627, 1)
+corner_radius_top_left = 154
+corner_radius_top_right = 96
+corner_radius_bottom_right = 161
+corner_radius_bottom_left = 347
+corner_detail = 12
+
+[node name="Battle Menu" type="Control"]
+layout_mode = 3
+anchor_left = 0.681
+anchor_top = 0.593
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -784.512
+offset_top = -384.264
+offset_right = -1112.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_12oum")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="TextBox" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.2
+anchor_top = 9.6
+anchor_right = 28.8
+anchor_bottom = 16.2
+offset_left = 7.99878
+offset_top = -384.0
+offset_right = 161.998
+offset_bottom = -475.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.693, 0.693)
+theme_override_constants/separation = -1
+metadata/_edit_group_ = true
+
+[node name="Panel" type="PanelContainer" parent="TextBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_5bn44")
+
+[node name="Panel" type="PanelContainer" parent="TextBox/Panel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_abadf")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBox/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 58
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_bottom = 20
+
+[node name="TextEdit" type="RichTextLabel" parent="TextBox/Panel/MarginContainer"]
+show_behind_parent = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+
+[node name="Skill" parent="." instance=ExtResource("2_j80ei")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1048.0
+offset_top = 136.0
+offset_right = 1193.0
+offset_bottom = 195.0
+grow_horizontal = 1
+grow_vertical = 1
+action = "triangle"
+back_action = "cross"
+
+[node name="Polygon2D" type="Polygon2D" parent="Skill"]
+modulate = Color(0.826669, 0.954239, 1.54018e-06, 1)
+position = Vector2(0.000183105, 11.544)
+scale = Vector2(0.617, 0.539)
+polygon = PackedVector2Array(23.088, 46.176, 46.176, 0, 69.264, 46.176, 46.176, 46.176, 23.088, 46.176, 34.632, 34.632, 57.72, 34.632, 46.176, 11.544, 34.632, 34.632)
+
+[node name="SkillBox" parent="." node_paths=PackedStringArray("battle_menu", "button") instance=ExtResource("3_5j1me")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 832.0
+offset_top = 120.0
+offset_right = 1048.0
+offset_bottom = 256.0
+grow_horizontal = 1
+grow_vertical = 1
+battle_menu = NodePath("..")
+button = NodePath("../Skill")
+
+[node name="Skill2" parent="." instance=ExtResource("2_j80ei")]
+layout_mode = 1
+offset_left = 279.999
+offset_top = -120.0
+offset_right = 40.9983
+offset_bottom = -312.0
+grow_horizontal = 1
+grow_vertical = 1
+action = "circle"
+back_action = "cross"
+
+[node name="Polygon2D2" type="Polygon2D" parent="Skill2"]
+modulate = Color(0.826669, 0.954239, 1.54018e-06, 1)
+position = Vector2(-11.5441, -11.544)
+scale = Vector2(0.827, 1.116)
+polygon = PackedVector2Array(34.632, 23.088, 46.176, 19.24, 46.176, 23.088, 38.48, 26.936, 34.632, 30.784, 38.48, 34.632, 46.176, 38.48, 53.8721, 34.632, 57.72, 30.784, 53.8721, 26.936, 46.176, 23.088, 46.176, 19.24, 57.72, 23.088, 61.5681, 30.784, 57.72, 38.48, 46.176, 42.328, 34.632, 38.48, 30.784, 30.784)
+
+[node name="SkillBox2" parent="." node_paths=PackedStringArray("battle_menu", "button") instance=ExtResource("3_5j1me")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 832.0
+offset_top = 248.0
+offset_right = 1046.0
+offset_bottom = 384.0
+grow_horizontal = 1
+grow_vertical = 1
+battle_menu = NodePath("..")
+button = NodePath("../Skill2")
+
+[node name="Skill3" parent="." instance=ExtResource("2_j80ei")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1048.0
+offset_top = 392.0
+offset_right = 1193.0
+offset_bottom = 451.0
+grow_horizontal = 1
+grow_vertical = 1
+back_action = "cross"
+
+[node name="Polygon2D2" type="Polygon2D" parent="Skill3"]
+modulate = Color(0.826669, 0.954239, 1.54018e-06, 1)
+position = Vector2(-11.5441, 11.544)
+scale = Vector2(0.727, 0.628)
+polygon = PackedVector2Array(28.86, 2.886, 34.632, 2.886, 34.632, 8.658, 34.632, 37.518, 57.7201, 37.518, 57.7201, 8.658, 46.1761, 8.658, 34.632, 8.658, 34.632, 2.886, 46.0024, 2.886, 63.4921, 2.886, 63.4921, 23.088, 63.4921, 43.29, 28.86, 43.29)
+
+[node name="SkillBox3" parent="." node_paths=PackedStringArray("battle_menu", "button") instance=ExtResource("3_5j1me")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 832.0
+offset_top = 376.0
+offset_right = 1048.0
+offset_bottom = 512.0
+grow_horizontal = 1
+grow_vertical = 1
+battle_menu = NodePath("..")
+button = NodePath("../Skill3")
+
+[node name="Act" parent="." instance=ExtResource("2_j80ei")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1048.0
+offset_top = 528.0
+offset_right = 1193.0
+offset_bottom = 587.0
+grow_horizontal = 1
+grow_vertical = 1
+action = "ui_left"
+back_action = "cross"
+button_text = "ACT"
+
+[node name="Polygon2D" type="Polygon2D" parent="Act"]
+modulate = Color(0.826669, 0.954239, 1.54018e-06, 1)
+position = Vector2(-11.5441, 0)
+scale = Vector2(0.836, 0.836)
+polygon = PackedVector2Array(40.4041, 19.4805, 28.86, 19.4805, 28.86, 17.316, 40.404, 17.316, 40.404, 5.77199, 46.176, 5.77199, 51.948, 5.77199, 51.948, 17.316, 63.4921, 17.316, 63.4921, 23.088, 63.4921, 28.86, 51.948, 28.86, 51.948, 40.4041, 46.176, 40.4041, 40.404, 40.4041, 40.404, 28.86, 28.86, 28.86, 28.86, 26.6955, 28.86, 19.4805, 31.0245, 19.4805, 31.0245, 26.6955, 40.4041, 26.6955)
+
+[node name="ActBox" parent="." node_paths=PackedStringArray("battle_menu", "button") instance=ExtResource("3_5j1me")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 832.0
+offset_top = 512.0
+offset_right = 1046.0
+offset_bottom = 640.0
+grow_horizontal = 1
+grow_vertical = 1
+battle_menu = NodePath("..")
+button = NodePath("../Act")
+
+[node name="msg" parent="." instance=ExtResource("4_22lf0")]
+
+[node name="Sfx" type="Node" parent="."]
+
+[node name="TurnStart" type="AudioStreamPlayer2D" parent="Sfx"]
+stream = ExtResource("6_0klou")
+
+[node name="TurnEnd" type="AudioStreamPlayer2D" parent="Sfx"]
+stream = ExtResource("7_4auat")
+volume_db = -13.893
+
+[node name="Select" type="AudioStreamPlayer2D" parent="Sfx"]
+stream = ExtResource("8_xt8dq")
+volume_db = -8.0
+
+[connection signal="virtue" from="." to="msg" method="_on_battle_menu_virtue"]
+[connection signal="empty" from="Skill" to="." method="_on_skill_empty"]
+[connection signal="full" from="Skill" to="." method="_on_skill_full"]
+[connection signal="pressed" from="Skill" to="SkillBox" method="_on_pressed"]
+[connection signal="back_button" from="SkillBox" to="." method="_on_skill_box_back_button"]
+[connection signal="forward_button" from="SkillBox" to="." method="_on_skill_box_forward_button"]
+[connection signal="empty" from="Skill2" to="." method="_on_skill_2_empty"]
+[connection signal="full" from="Skill2" to="." method="_on_skill_2_full"]
+[connection signal="pressed" from="Skill2" to="SkillBox2" method="_on_pressed"]
+[connection signal="back_button" from="SkillBox2" to="." method="_on_skill_box_2_back_button"]
+[connection signal="forward_button" from="SkillBox2" to="." method="_on_skill_box_2_forward_button"]
+[connection signal="empty" from="Skill3" to="." method="_on_skill_3_empty"]
+[connection signal="full" from="Skill3" to="." method="_on_skill_3_full"]
+[connection signal="pressed" from="Skill3" to="SkillBox3" method="_on_pressed"]
+[connection signal="back_button" from="SkillBox3" to="." method="_on_skill_box_3_back_button"]
+[connection signal="forward_button" from="SkillBox3" to="." method="_on_skill_box_3_forward_button"]
+[connection signal="empty" from="Act" to="." method="_on_act_empty"]
+[connection signal="full" from="Act" to="." method="_on_act_full"]
+[connection signal="pressed" from="Act" to="ActBox" method="_on_pressed"]
+[connection signal="back_button" from="ActBox" to="." method="_on_act_box_back_button"]
+[connection signal="forward_button" from="ActBox" to="." method="on_act_pressed"]

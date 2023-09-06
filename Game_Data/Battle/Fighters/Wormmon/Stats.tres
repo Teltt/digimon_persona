@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://kyl20vvmukcl"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Fighters/Stats.gd" id="1_nw86j"]
+
+[resource]
+script = ExtResource("1_nw86j")
+HP = 100
+growth_HP = "1.0"
+SP = 100
+growth_SP = "1.0"
+ATK = 100
+growth_ATK = "1.2"
+DEF = 100
+growth_DEF = "1.1"
+INT = 10
+growth_INT = "0.9"
+WAIT = 5
+DRAIN = 4
+BREAK = 10
+STALL = 8
+EVA = 100
+growth_EVA = "1.0"
+ACU = 100
+growth_ACU = "1.0"
+CRT = 5
+growth_CRT = "1.0"

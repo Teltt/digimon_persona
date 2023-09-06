@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm3jwhd2jtp6l"]
+
+[ext_resource type="Script" path="res://Game_Data/Flow/field_kicker.gd" id="1_ixe47"]
+
+[node name="field_kicker" type="Node2D"]
+script = ExtResource("1_ixe47")

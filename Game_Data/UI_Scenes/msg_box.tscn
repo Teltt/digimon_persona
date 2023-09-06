@@ -1,0 +1,309 @@
+[gd_scene load_steps=10 format=3 uid="uid://b03aadav3mbkg"]
+
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/msg_box.gd" id="1_i0ytw"]
+[ext_resource type="Texture2D" uid="uid://bt3sv6f025g8a" path="res://Game_Data/Graphics/Tex/Crests.png" id="2_ktshn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gamoo"]
+atlas = ExtResource("2_ktshn")
+region = Rect2(43, 263, 186, 241)
+
+[sub_resource type="Animation" id="Animation_6x1xy"]
+resource_name = "display_choices"
+length = 0.4079
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Choices:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.285, 0), Vector2(0.28498, 1.05263)]
+}
+
+[sub_resource type="Animation" id="Animation_ffswh"]
+resource_name = "popout"
+length = 0.443
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Poly:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portrait:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Poly:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(104, 538), Vector2(104, 700)]
+}
+
+[sub_resource type="Animation" id="Animation_pcum5"]
+resource_name = "popout_choices"
+length = 0.4349
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Choices:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.28498, 1.05263), Vector2(0.285, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qvakc"]
+resource_name = "popup"
+length = 0.418
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portrait:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.404, 0), Vector2(1.40377, 1.28766)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Poly:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0.1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Poly:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(104, 700), Vector2(104, 538)]
+}
+
+[sub_resource type="Animation" id="Animation_7ntje"]
+resource_name = "progress"
+length = 0.4565
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portrait:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 0), Vector2(1, 0), Vector2(2, 0), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Poly/Message:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8fvjd"]
+_data = {
+"display_choices": SubResource("Animation_6x1xy"),
+"popout": SubResource("Animation_ffswh"),
+"popout_choices": SubResource("Animation_pcum5"),
+"popup": SubResource("Animation_qvakc"),
+"progress": SubResource("Animation_7ntje")
+}
+
+[node name="msg_box" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_i0ytw")
+
+[node name="Poly" type="Polygon2D" parent="."]
+position = Vector2(104, 700)
+scale = Vector2(1, 1e-05)
+color = Color(0.172549, 1, 0.396078, 0.635294)
+offset = Vector2(0, -320)
+polygon = PackedVector2Array(16, 216, 16, 224, 48, 224, 48, 248, 16, 248, 16, 256, 32, 256, 40, 256, 40, 264, 48, 264, 48, 272, 48, 288, 24, 288, 24, 304, 40, 304, 40, 328, 16, 328, 16, 336, 56, 336, 56, 344, 16, 344, 16, 360, 24, 360, 24, 368, 16, 368, 16, 384, 928, 384, 928, 216)
+
+[node name="Polygon2D" type="Polygon2D" parent="Poly"]
+position = Vector2(-56, -310.909)
+scale = Vector2(1, 0.954545)
+color = Color(0.172549, 1, 0.396078, 0.635294)
+polygon = PackedVector2Array(24, 256, 24, 280, 40, 280, 40, 256, 32, 256)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Poly"]
+position = Vector2(-40, -295.636)
+scale = Vector2(1, 0.954545)
+color = Color(0.172549, 1, 0.396078, 0.635294)
+polygon = PackedVector2Array(24, 256, 24, 280, 40, 280, 40, 256, 32, 256)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Poly"]
+position = Vector2(-72, -257.455)
+scale = Vector2(1, 0.954545)
+color = Color(0.172549, 1, 0.396078, 0.635294)
+polygon = PackedVector2Array(24, 256, 24, 280, 40, 280, 40, 256, 32, 256)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Poly"]
+position = Vector2(-48, -219.273)
+scale = Vector2(1, 0.954545)
+color = Color(0.172549, 1, 0.396078, 0.635294)
+polygon = PackedVector2Array(24, 256, 24, 280, 40, 280, 40, 256, 32, 256)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Poly"]
+position = Vector2(-80, -211.636)
+scale = Vector2(1, 0.954545)
+color = Color(0.172549, 1, 0.396078, 0.635294)
+polygon = PackedVector2Array(24, 256, 24, 280, 40, 280, 40, 256, 32, 256)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Poly"]
+position = Vector2(-32, -356.727)
+scale = Vector2(1, 0.954545)
+color = Color(0.172549, 1, 0.396078, 0.635294)
+polygon = PackedVector2Array(24, 256, 24, 280, 40, 280, 40, 256, 32, 256)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Poly"]
+position = Vector2(-104, -547.234)
+scale = Vector2(1, 1.00478)
+color = Color(0.211765, 0.301961, 0.321569, 0.807843)
+polygon = PackedVector2Array(160, 592, 200, 448, 1024, 448, 976, 600)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Poly"]
+position = Vector2(-104, -524.727)
+scale = Vector2(1, 0.954545)
+color = Color(0.211765, 0.301961, 0.321569, 1)
+polygon = PackedVector2Array(200, 401.252, 184, 451.538, 472, 451.538, 488, 401.252)
+
+[node name="Name" type="RichTextLabel" parent="Poly"]
+offset_left = 104.0
+offset_top = -142.909
+offset_right = 354.0
+offset_bottom = -62.909
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Message" type="RichTextLabel" parent="Poly"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_top = -104.0
+offset_right = 848.0
+offset_bottom = 64.0
+grow_vertical = 2
+pivot_offset = Vector2(0, 81.965)
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Progress" type="Node2D" parent="Poly"]
+modulate = Color(0.243137, 0.286275, 0, 1)
+position = Vector2(-88, -514)
+scale = Vector2(1, 0.954545)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Poly/Progress"]
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(968, 552, 1000, 576, 960, 600, 992, 592, 1008, 576, 992, 560)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Poly/Progress"]
+position = Vector2(-24, 0)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(968, 552, 1000, 576, 960, 600, 992, 592, 1008, 576, 992, 560)
+
+[node name="Choices" type="Polygon2D" parent="."]
+position = Vector2(848, 208)
+scale = Vector2(0.285, 1e-05)
+color = Color(0.211765, 0.301961, 0.321569, 0.807843)
+offset = Vector2(0, -400)
+polygon = PackedVector2Array(160, 592, 272.289, 448.4, 1024, 448, 889.877, 592.8)
+
+[node name="1" type="Polygon2D" parent="Choices"]
+position = Vector2(393.01, 86.4)
+color = Color(0.145098, 0.717647, 0.145098, 1)
+polygon = PackedVector2Array(0, -22.8, 561.444, -22.8, 505.3, 7.60001, -56.1443, 7.60001)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Choices/1"]
+offset_top = -38.0
+offset_right = 561.0
+offset_bottom = 15.0
+scale = Vector2(1.414, 1)
+theme_override_font_sizes/normal_font_size = 33
+text = "How about this"
+
+[node name="2" type="Polygon2D" parent="Choices"]
+position = Vector2(336.866, 121.6)
+color = Color(0.145098, 0.219608, 0.145098, 1)
+polygon = PackedVector2Array(0, -22.8, 561.444, -22.8, 505.3, 7.60001, -56.1443, 7.60001)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Choices/2"]
+offset_top = -38.0
+offset_right = 561.0
+offset_bottom = 15.0
+scale = Vector2(1.414, 1)
+theme_override_font_sizes/normal_font_size = 33
+
+[node name="3" type="Polygon2D" parent="Choices"]
+position = Vector2(280.722, 159.6)
+color = Color(0.145098, 0.219608, 0.145098, 1)
+polygon = PackedVector2Array(0, -22.8, 561.444, -22.8, 505.3, 7.60001, -56.1443, 7.60001)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Choices/3"]
+offset_top = -38.0
+offset_right = 561.0
+offset_bottom = 15.0
+scale = Vector2(1.414, 1)
+theme_override_font_sizes/normal_font_size = 33
+
+[node name="Portrait" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(808, 376)
+scale = Vector2(1, 1e-05)
+texture = SubResource("AtlasTexture_gamoo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8fvjd")
+}

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BattleMessage" load_steps=2 format=3 uid="uid://b8hx21ol6u2gh"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/BattleMessage.gd" id="1_oewxs"]
+
+[resource]
+script = ExtResource("1_oewxs")
+close_message_box = false
+line1 = "<actor2>'s <virtue> did little."
+line2 = "<actor> took the hit!"
+line3 = ""
+emits_virtues = Array[String]([])
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}

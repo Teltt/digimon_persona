@@ -1,0 +1,107 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=8 format=3 uid="uid://dpr812dknnpp3"]
+
+[ext_resource type="Resource" uid="uid://gpjiilkdi6tm" path="res://Game_Data/Message/Common/MergeTest.tres" id="1_7nstu"]
+[ext_resource type="Script" path="res://Game_Data/Message/MessageChoice.gd" id="1_yspl6"]
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="2_ld3oq"]
+
+[sub_resource type="Resource" id="Resource_5qesa"]
+script = ExtResource("1_yspl6")
+is_digivolution_answer = true
+digivolution_level = 1
+text = "Davis"
+next_message = ExtResource("1_7nstu")
+function_name1 = ""
+function_name2 = ""
+function_name3 = ""
+function_name4 = ""
+skip_if_function_false = ""
+skip_if_flag_true = Array[String]([])
+skip_if_flag_false = Array[String]([])
+set_true_flags = Array[String](["tai_first_impression_honest"])
+set_false_flags = Array[String]([])
+set_save_var = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_8p3j5"]
+script = ExtResource("1_yspl6")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "Daisuke"
+next_message = ExtResource("1_7nstu")
+function_name1 = ""
+function_name2 = ""
+function_name3 = ""
+function_name4 = ""
+skip_if_function_false = ""
+skip_if_flag_true = Array[String]([])
+skip_if_flag_false = Array[String]([])
+set_true_flags = Array[String](["tai_first_impression_geeky"])
+set_false_flags = Array[String]([])
+set_save_var = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_u7qob"]
+script = ExtResource("1_yspl6")
+is_digivolution_answer = false
+digivolution_level = 0
+text = "ClownFace"
+next_message = ExtResource("1_7nstu")
+function_name1 = ""
+function_name2 = ""
+function_name3 = ""
+function_name4 = ""
+skip_if_function_false = ""
+skip_if_flag_true = Array[String]([])
+skip_if_flag_false = Array[String]([])
+set_true_flags = Array[String](["tai_first_impression_quirky"])
+set_false_flags = Array[String]([])
+set_save_var = {}
+seek_time = -1
+close_message_box = false
+
+[sub_resource type="Resource" id="Resource_uxphd"]
+script = ExtResource("2_ld3oq")
+is_digivolution_question = true
+line1 = "What's your name?"
+line2 = ""
+line3 = ""
+choices = Array[ExtResource("1_yspl6")]([SubResource("Resource_5qesa"), SubResource("Resource_8p3j5"), SubResource("Resource_u7qob")])
+change_speaker = ""
+portrait_file_name = ""
+function_name1 = ""
+function_name2 = ""
+function_name3 = ""
+function_name4 = ""
+skip_if_function_false = ""
+skip_if_flag_true = Array[String]([])
+skip_if_flag_false = Array[String]([])
+set_true_flags = Array[String]([])
+set_false_flags = Array[String]([])
+set_save_var = {}
+seek_time = -1
+close_message_box = false
+
+[resource]
+script = ExtResource("2_ld3oq")
+is_digivolution_question = false
+line1 = "Hi my name is Taichi Kamiya."
+line2 = "But you can call me Tai."
+line3 = ""
+next_message = SubResource("Resource_uxphd")
+choices = Array[ExtResource("1_yspl6")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_name1 = ""
+function_name2 = ""
+function_name3 = ""
+function_name4 = ""
+skip_if_function_false = ""
+skip_if_flag_true = Array[String]([])
+skip_if_flag_false = Array[String]([])
+set_true_flags = Array[String]([])
+set_false_flags = Array[String]([])
+set_save_var = {}
+seek_time = -1
+close_message_box = false

@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Mood" load_steps=3 format=3 uid="uid://d008idhfshtqs"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Mood/Mood.gd" id="1_3ksll"]
+[ext_resource type="Resource" uid="uid://clxbykvdoy0lw" path="res://Game_Data/Battle/Fighters/Ken/Character.tres" id="1_3weqg"]
+
+[resource]
+script = ExtResource("1_3ksll")
+moods = Array[ExtResource("1_3ksll")]([])
+messages = Array[Resource("res://Game_Data/Battle/Message/BattleMessage.gd")]([])
+applies_to_who = Array[Resource("res://Game_Data/Battle/Fighters/ResActor.gd")]([ExtResource("1_3weqg")])
+mood_name = "Default"
+is_main = true
+per_battle = -1
+per_day = -1
+per_save = -1
+delay = 0
+tries_battle_again = false
+tried_battle = 0
+tried_battle_until_appear = 0
+tries_day_again = false
+tried_day = 0
+tried_day_until_appear = 0
+tries_save_again = false
+tried_save = 0
+tried_save_until_appear = 0
+at_low_partner_health = false
+at_partner_hungry = false
+regularly = true
+at_high_partner_health = false
+at_partner_full = false
+at_party_low_morale = false
+at_party_high_morale = false
+at_general_low_health = false
+at_general_high_health = false
+at_general_hunger_health = false
+from_month = 4
+from_day = 12
+to_month = 4
+to_day = 13
+spawn_if_function = ""
+spawn_expression = ""

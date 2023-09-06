@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b06g88q7ltqk7"]
+
+[ext_resource type="Script" path="res://Game_Data/Flow/event.gd" id="1_5oi2f"]
+
+[sub_resource type="Animation" id="Animation_43s3a"]
+resource_name = "event"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0n2jr"]
+_data = {
+"event": SubResource("Animation_43s3a")
+}
+
+[node name="event" type="Node2D"]
+script = ExtResource("1_5oi2f")
+
+[node name="Camera_Pos" type="Marker2D" parent="."]
+position = Vector2(384, 232)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_process_mode = 2
+libraries = {
+"": SubResource("AnimationLibrary_0n2jr")
+}

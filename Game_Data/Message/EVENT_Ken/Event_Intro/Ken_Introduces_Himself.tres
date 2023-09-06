@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=3 format=3 uid="uid://dmnyv2v3sugg7"]
+
+[ext_resource type="Resource" uid="uid://k6dgo5atnqh4" path="res://Game_Data/Message/EVENT_Ken/Event_Intro/Ken_Deadline.tres" id="1_yvxtn"]
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="2_lf0gs"]
+
+[resource]
+script = ExtResource("2_lf0gs")
+is_digivolution_question = false
+line1 = "I am pleased to make your  acquaintance."
+line2 = ""
+line3 = ""
+next_message = ExtResource("1_yvxtn")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = "Ken"
+portrait_file_name = ""
+function_name1 = ""
+function_name2 = ""
+function_name3 = ""
+function_name4 = ""
+skip_if_function_false = ""
+skip_if_flag_true = Array[String]([])
+skip_if_flag_false = Array[String]([])
+set_true_flags = Array[String]([])
+set_false_flags = Array[String]([])
+set_save_var = {}
+seek_time = -1
+close_message_box = false

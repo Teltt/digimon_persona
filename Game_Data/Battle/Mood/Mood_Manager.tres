@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Mood_Mgr" load_steps=3 format=3 uid="uid://bkdk828d5ie7s"]
+
+[ext_resource type="Resource" uid="uid://dhqkgn10h10tm" path="res://Game_Data/Battle/Fighters/Yolei/Mood/Main.tres" id="1_dnc8m"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Mood/Mood_Manager.gd" id="1_xwram"]
+
+[resource]
+script = ExtResource("1_xwram")
+moods = Array[Resource("res://Game_Data/Battle/Mood/Mood.gd")]([ExtResource("1_dnc8m")])

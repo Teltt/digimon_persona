@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterBond" load_steps=4 format=3 uid="uid://dsh47fkxcojn1"]
+
+[ext_resource type="PackedScene" uid="uid://08168tbygiw1" path="res://Game_Data/Message/EVENT_Ken/Event_Intro/ev_ken_class.tscn" id="1_dwll6"]
+[ext_resource type="Script" path="res://Game_Data/Social/CharacterBond.gd" id="1_h1qid"]
+[ext_resource type="PackedScene" uid="uid://4iy0qcjlenu2" path="res://Game_Data/Message/EVENT_Yolei/EVENT_Rank1/ev_yolei_arcade.tscn" id="2_x5ob1"]
+
+[resource]
+script = ExtResource("1_h1qid")
+character_name = "Yolei Inoue"
+max_level = 14
+crest_name = "love:sincerity"
+requirements = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+rankup_events = Array[PackedScene]([ExtResource("2_x5ob1"), null, null, null, null, null, null, null, null, null, null, null, null, null])
+hangout_events = Array[PackedScene]([ExtResource("1_dwll6"), null, null, null, null, null, null, null, null, null, null, null, null, null])

@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="BattleMessage" load_steps=15 format=3 uid="uid://dylsk3p7jj222"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/BattleMessage.gd" id="1_exq23"]
+[ext_resource type="Resource" uid="uid://x277bqqbvip3" path="res://Game_Data/Battle/Fighters/Cody/Mood/MSG_Lecture_Fail.tres" id="2_y7smb"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/VirtueMessage.gd" id="3_a5laj"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/DictionaryVirtueMessage.gd" id="4_sx6m0"]
+[ext_resource type="Resource" uid="uid://hvwd4jpl6xvu" path="res://Game_Data/Battle/Fighters/Cody/Mood/MSG_Lecture_Success.tres" id="5_rt326"]
+
+[sub_resource type="Resource" id="Resource_om33i"]
+script = ExtResource("1_exq23")
+close_message_box = false
+line1 = "<lectured> grumbled under their breath about"
+line2 = "<actor>'s lecture."
+line3 = ""
+emits_virtues = Array[String]([])
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+
+[sub_resource type="Resource" id="Resource_3yh22"]
+script = ExtResource("3_a5laj")
+virtue = 0
+msg = ExtResource("2_y7smb")
+
+[sub_resource type="Resource" id="Resource_75g85"]
+script = ExtResource("3_a5laj")
+virtue = 3
+msg = ExtResource("2_y7smb")
+
+[sub_resource type="Resource" id="Resource_4b34h"]
+script = ExtResource("3_a5laj")
+virtue = 4
+msg = ExtResource("2_y7smb")
+
+[sub_resource type="Resource" id="Resource_87eh2"]
+script = ExtResource("4_sx6m0")
+dictionary = Array[ExtResource("3_a5laj")]([SubResource("Resource_3yh22"), SubResource("Resource_75g85"), SubResource("Resource_4b34h")])
+
+[sub_resource type="Resource" id="Resource_rww1p"]
+script = ExtResource("3_a5laj")
+virtue = 1
+msg = ExtResource("5_rt326")
+
+[sub_resource type="Resource" id="Resource_56bx3"]
+script = ExtResource("3_a5laj")
+virtue = 2
+msg = ExtResource("5_rt326")
+
+[sub_resource type="Resource" id="Resource_4xaqj"]
+script = ExtResource("3_a5laj")
+virtue = 4
+msg = ExtResource("5_rt326")
+
+[sub_resource type="Resource" id="Resource_v4s28"]
+script = ExtResource("4_sx6m0")
+dictionary = Array[ExtResource("3_a5laj")]([SubResource("Resource_rww1p"), SubResource("Resource_56bx3"), SubResource("Resource_4xaqj")])
+
+[resource]
+script = ExtResource("1_exq23")
+close_message_box = false
+line1 = "> <actor> is lecturing <lectured>."
+line2 = ""
+line3 = ""
+emits_virtues = Array[String](["Knowledge"])
+success = SubResource("Resource_v4s28")
+fail = SubResource("Resource_87eh2")
+dont_care_message = SubResource("Resource_om33i")
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}

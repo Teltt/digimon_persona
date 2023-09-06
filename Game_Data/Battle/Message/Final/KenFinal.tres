@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="BattleMessage" load_steps=8 format=3 uid="uid://cxc5f55ym58ln"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/BattleMessage.gd" id="1_jft8n"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/VirtueMessage.gd" id="2_6b1kx"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/DictionaryVirtueMessage.gd" id="3_0wgk8"]
+
+[sub_resource type="Resource" id="Resource_hyus0"]
+script = ExtResource("1_jft8n")
+close_message_box = false
+time = 15
+drain = 7
+line1 = "> <ken> frowns."
+line2 = "\"You're right... Thank you.\""
+line3 = "Tears of emotion weave down his face."
+emits_virtues = Array[String]([])
+loops = false
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+
+[sub_resource type="Resource" id="Resource_rkfgs"]
+script = ExtResource("1_jft8n")
+close_message_box = false
+time = 15
+drain = 7
+line1 = "> <davis> reminds <ken>"
+line2 = "\"Hey, you've got to start being kind to yourself\""
+line3 = "\"Because you are, I've seen it.\""
+emits_virtues = Array[String]([])
+dont_care_message = SubResource("Resource_hyus0")
+loops = false
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+
+[sub_resource type="Resource" id="Resource_nriap"]
+script = ExtResource("2_6b1kx")
+virtue = "Kindness"
+msg = SubResource("Resource_rkfgs")
+
+[sub_resource type="Resource" id="Resource_ygqf8"]
+script = ExtResource("3_0wgk8")
+dictionary = Array[ExtResource("2_6b1kx")]([SubResource("Resource_nriap")])
+
+[resource]
+script = ExtResource("1_jft8n")
+close_message_box = false
+time = 15
+drain = 7
+line1 = "> <ken> says that he's not worth the trouble."
+line2 = ""
+line3 = ""
+emits_virtues = Array[String]([])
+virtue_response = SubResource("Resource_ygqf8")
+loops = true
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}

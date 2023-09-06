@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=4 format=3 uid="uid://ceumam61ecb7l"]
+
+[ext_resource type="Resource" uid="uid://j432gw4ntkh0" path="res://Game_Data/Message/EVENT_Ken/Event_Intro/StudentWowed.tres" id="1_6soaj"]
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="1_qto0w"]
+
+[sub_resource type="Resource" id="Resource_fd8b1"]
+script = ExtResource("1_qto0w")
+is_digivolution_question = false
+line1 = "If you'll excuse the bragging..."
+line2 = "I know  many subjects even "
+line3 = "Highschoolers don't yet comprehend."
+next_message = ExtResource("1_6soaj")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[resource]
+script = ExtResource("1_qto0w")
+is_digivolution_question = false
+line1 = "That is true."
+line2 = " I'm working very hard to learn all I can."
+line3 = ""
+next_message = SubResource("Resource_fd8b1")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = "Ken"
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false

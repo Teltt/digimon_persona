@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2217nbomwyvi"]
+
+[ext_resource type="PackedScene" uid="uid://dm8vrfhidr8dm" path="res://Game_Data/UI_Scenes/turn.tscn" id="1_bmo3k"]
+
+[node name="Turn_MGR" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Turns" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 126.0
+offset_bottom = 360.0
+rotation = 3.14159
+alignment = 2
+
+[node name="Turn" parent="Turns" instance=ExtResource("1_bmo3k")]
+layout_mode = 2

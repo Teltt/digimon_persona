@@ -1,0 +1,206 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2l6ra6wylpnh"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/battle_msg_box.gd" id="1_p8hhe"]
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/MSG_ATBeat.gd" id="2_7gj45"]
+[ext_resource type="PackedScene" uid="uid://deqhn48lsgbxx" path="res://Game_Data/UI_Scenes/at_beat_bar.tscn" id="2_hi3hs"]
+
+[sub_resource type="Animation" id="Animation_07ig7"]
+resource_name = "popout"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Poly:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(-3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bxjk7"]
+resource_name = "popup"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Poly:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j5un4"]
+resource_name = "progress"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Poly/Message:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3, 0.011), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x7o8y"]
+_data = {
+"popout": SubResource("Animation_07ig7"),
+"popup": SubResource("Animation_bxjk7"),
+"progress": SubResource("Animation_j5un4")
+}
+
+[node name="msg" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_p8hhe")
+
+[node name="Poly" type="Polygon2D" parent="."]
+position = Vector2(-16, 568)
+color = Color(0.172549, 1, 0.396078, 0.635294)
+offset = Vector2(0, -320)
+polygon = PackedVector2Array(52.4801, 216, 60.5867, 240, 40, 256, 60.5867, 272, 48, 288, 24, 304, 40, 304, 40, 328, 16, 336, 56, 336, 56, 344, 16, 360, 24, 360, 52.4801, 384, 816, 384, 848, 216)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Poly"]
+remote_path = NodePath("../../ATBeat")
+
+[node name="Polygon2D8" type="Polygon2D" parent="Poly"]
+position = Vector2(-104, -547.234)
+scale = Vector2(1, 1.00478)
+color = Color(0.211765, 0.301961, 0.321569, 0.807843)
+polygon = PackedVector2Array(160, 592, 200, 448, 904, 449.087, 912, 592.402)
+
+[node name="Message" type="RichTextLabel" parent="Poly"]
+offset_left = 96.0
+offset_top = -96.0
+offset_right = 796.0
+offset_bottom = 54.0
+pivot_offset = Vector2(200, 75)
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Progress" type="Node2D" parent="Poly"]
+modulate = Color(0.827451, 0.952941, 0, 1)
+position = Vector2(-160, -704)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Poly/Progress"]
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(968, 552, 1000, 576, 960, 600, 992, 592, 1008, 576, 992, 560)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Poly/Progress"]
+position = Vector2(-24, 0)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(968, 552, 1000, 576, 960, 600, 992, 592, 1008, 576, 992, 560)
+
+[node name="Polygon2D" type="Polygon2D" parent="Poly/Progress"]
+position = Vector2(-8.10667, 0)
+polygon = PackedVector2Array(916.053, 600, 916.053, 552, 940.373, 552, 948.48, 560, 948.48, 576, 940.373, 576, 940.373, 560, 924.16, 560, 924.16, 568, 940.373, 568, 940.373, 576, 932.267, 576, 948.48, 600, 940.373, 600, 924.16, 576, 924.16, 600)
+
+[node name="Progress2" type="Node2D" parent="Poly"]
+modulate = Color(0.827451, 0.952941, 0, 1)
+position = Vector2(1040, -704)
+scale = Vector2(-1, 1)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Poly/Progress2"]
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(968, 552, 1000, 576, 960, 600, 992, 592, 1008, 576, 992, 560)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Poly/Progress2"]
+position = Vector2(-24, 0)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(968, 552, 1000, 576, 960, 600, 992, 592, 1008, 576, 992, 560)
+
+[node name="Polygon2D" type="Polygon2D" parent="Poly/Progress2"]
+polygon = PackedVector2Array(932.266, 552, 932.266, 600, 899.84, 600, 899.84, 592, 924.16, 592, 924.16, 552)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x7o8y")
+}
+
+[node name="ATBeat" type="Node2D" parent="."]
+position = Vector2(-16, 568)
+script = ExtResource("2_7gj45")
+
+[node name="Bar" parent="ATBeat" instance=ExtResource("2_hi3hs")]
+anchors_preset = -1
+anchor_left = 5.0
+anchor_top = 10.8
+anchor_right = 5.0
+anchor_bottom = 10.8
+offset_left = 176.0
+offset_top = -136.0
+offset_right = 288.0
+offset_bottom = -108.0
+auto_connect = false
+beats_till_fill = 12
+
+[node name="Bar2" parent="ATBeat" instance=ExtResource("2_hi3hs")]
+anchors_preset = -1
+anchor_left = 7.8
+anchor_top = 10.8
+anchor_right = 7.8
+anchor_bottom = 10.8
+offset_left = 288.0
+offset_top = -136.0
+offset_right = 400.0
+offset_bottom = -108.0
+auto_connect = false
+beats_till_fill = 12
+
+[node name="Bar3" parent="ATBeat" instance=ExtResource("2_hi3hs")]
+anchors_preset = -1
+anchor_left = 11.4
+anchor_top = 10.8
+anchor_right = 11.4
+anchor_bottom = 10.8
+offset_left = 400.0
+offset_top = -136.0
+offset_right = 512.0
+offset_bottom = -108.0
+auto_connect = false
+beats_till_fill = 12
+
+[node name="Bar4" parent="ATBeat" instance=ExtResource("2_hi3hs")]
+anchors_preset = -1
+anchor_left = 14.2
+anchor_top = 10.8
+anchor_right = 14.2
+anchor_bottom = 10.8
+offset_left = 512.0
+offset_top = -136.0
+offset_right = 624.0
+offset_bottom = -108.0
+auto_connect = false
+beats_till_fill = 12
+
+[node name="Bar5" parent="ATBeat" instance=ExtResource("2_hi3hs")]
+anchors_preset = -1
+anchor_left = 14.2
+anchor_top = 10.8
+anchor_right = 14.2
+anchor_bottom = 10.8
+offset_left = 624.0
+offset_top = -136.0
+offset_right = 736.0
+offset_bottom = -108.0
+auto_connect = false
+beats_till_fill = 12
+
+[connection signal="full" from="ATBeat/Bar" to="ATBeat" method="_on_bar_full"]
+[connection signal="full" from="ATBeat/Bar2" to="ATBeat" method="_on_bar_2_full"]
+[connection signal="full" from="ATBeat/Bar3" to="ATBeat" method="_on_bar_3_full"]
+[connection signal="full" from="ATBeat/Bar4" to="ATBeat" method="_on_bar_4_full"]
+[connection signal="full" from="ATBeat/Bar5" to="ATBeat" method="_on_bar_5_full"]

@@ -1,0 +1,172 @@
+[gd_resource type="Resource" script_class="BattleMessage" load_steps=22 format=3 uid="uid://bbgq728de08tq"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Attacks/Attack.gd" id="1_5l6vu"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/BattleMessage.gd" id="1_nq78l"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Mood/MoodParticipant.gd" id="2_xdupr"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Mood/ParticipantDictionary.gd" id="3_s63kl"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/VirtueMessage.gd" id="4_pykp2"]
+[ext_resource type="Resource" uid="uid://dv06uu474r0j7" path="res://Game_Data/Battle/Message/Common/DigimonInDanger/Sucess.tres" id="5_hmfrb"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/DictionaryVirtueMessage.gd" id="5_ockoy"]
+[ext_resource type="Resource" uid="uid://b8hx21ol6u2gh" path="res://Game_Data/Battle/Message/Common/DigimonInDanger/Fail.tres" id="7_bfiyl"]
+
+[sub_resource type="Resource" id="Resource_r6hs6"]
+script = ExtResource("1_5l6vu")
+desc = "a punishment for lack of courage"
+type = 8
+name = "Default"
+accuracy = 100
+magic_power = 0
+physical_power = 10
+physical_penetration_power = 0
+magic_penetration_power = 0
+stamina_cost = 5
+heals_for = 0
+breaks_with_weakness = false
+grants_technical = false
+extra_break_time = 0
+is_multi_hit = false
+stop_on_miss = false
+effect_lasts = 0
+hits_all_enemies = false
+hits_all_allies = false
+hits_self = false
+can_target_allies = false
+can_target_enemies = false
+can_target_self = false
+assigns_random_bad = false
+assigns_confuse = false
+assigns_parylyze = false
+assigns_stun = false
+assigns_sleep = false
+assigns_poison = false
+assigns_dot = false
+assigns_bug = false
+assigns_random_good = false
+assigns_endure = false
+assigns_phys_sheild = false
+assigns_magic_sheild = false
+assigns_status_sheild = false
+assigns_all_sheild = false
+assigns_power_charge = false
+assigns_mind_charge = false
+assigns_status_charge = false
+assigns_all_charge = false
+assigns_phys_counter = false
+assigns_magic_counter = false
+assigns_status_counter = false
+assigns_all_counter = false
+physical_shield_breaker = false
+magic_shield_breaker = false
+status_shield_breaker = false
+all_shield_breaker = false
+physical_charge_breaker = false
+magic_charge_breaker = false
+status_charge_breaker = false
+all_charge_breaker = false
+physical_counter_breaker = false
+magic_counter_breaker = false
+status_counter_breaker = false
+all_counter_breaker = false
+enemy_atk = 0
+enemy_def = 0
+enemy_int = 0
+enemy_spd = 0
+ally_atk = 0
+ally_def = 0
+ally_int = 0
+ally_spd = 0
+ally_acu = 0
+ally_eva = 0
+ally_crt = 0
+
+[sub_resource type="Resource" id="Resource_l2mro"]
+script = ExtResource("1_nq78l")
+close_message_box = true
+attack = SubResource("Resource_r6hs6")
+time = 10
+drain = 7
+line1 = "Nothing was done and <actor> was hurt!"
+line2 = ""
+line3 = ""
+emits_virtues = Array[String]([])
+loops = false
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+
+[sub_resource type="Resource" id="Resource_6e1j7"]
+script = ExtResource("2_xdupr")
+mood = ""
+message_index = 0
+identifier = "<actor2>"
+
+[sub_resource type="Resource" id="Resource_7xavv"]
+script = ExtResource("3_s63kl")
+dictionary = Array[ExtResource("2_xdupr")]([SubResource("Resource_6e1j7")])
+
+[sub_resource type="Resource" id="Resource_8638i"]
+script = ExtResource("4_pykp2")
+virtue = "Courage"
+msg = ExtResource("5_hmfrb")
+
+[sub_resource type="Resource" id="Resource_7x4l3"]
+script = ExtResource("4_pykp2")
+virtue = "Sincerity"
+msg = ExtResource("7_bfiyl")
+
+[sub_resource type="Resource" id="Resource_jkwyu"]
+script = ExtResource("4_pykp2")
+virtue = "Knowledge"
+msg = ExtResource("7_bfiyl")
+
+[sub_resource type="Resource" id="Resource_clkv2"]
+script = ExtResource("4_pykp2")
+virtue = "Reliability"
+msg = ExtResource("5_hmfrb")
+
+[sub_resource type="Resource" id="Resource_58wf0"]
+script = ExtResource("4_pykp2")
+virtue = "Love"
+msg = ExtResource("5_hmfrb")
+
+[sub_resource type="Resource" id="Resource_2aqns"]
+script = ExtResource("4_pykp2")
+virtue = "Friendship"
+msg = ExtResource("5_hmfrb")
+
+[sub_resource type="Resource" id="Resource_3niql"]
+script = ExtResource("4_pykp2")
+virtue = "Kindness"
+msg = ExtResource("7_bfiyl")
+
+[sub_resource type="Resource" id="Resource_tnehk"]
+script = ExtResource("4_pykp2")
+virtue = "Miracle"
+msg = ExtResource("7_bfiyl")
+
+[sub_resource type="Resource" id="Resource_ek3nl"]
+script = ExtResource("5_ockoy")
+dictionary = Array[ExtResource("4_pykp2")]([SubResource("Resource_8638i"), SubResource("Resource_7x4l3"), SubResource("Resource_jkwyu"), SubResource("Resource_clkv2"), SubResource("Resource_58wf0"), SubResource("Resource_2aqns"), SubResource("Resource_3niql"), SubResource("Resource_tnehk")])
+
+[resource]
+script = ExtResource("1_nq78l")
+close_message_box = false
+time = 10
+drain = 7
+participants = SubResource("Resource_7xavv")
+line1 = "<actor> is in danger!"
+line2 = ""
+line3 = ""
+emits_virtues = Array[String]([])
+virtue_response = SubResource("Resource_ek3nl")
+dont_care_message = SubResource("Resource_l2mro")
+loops = false
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}

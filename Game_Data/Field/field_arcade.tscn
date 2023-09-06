@@ -1,0 +1,173 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1r3noi4gx5e1"]
+
+[ext_resource type="PackedScene" uid="uid://du8b8mpoy77bd" path="res://Game_Data/OBJ/world/arcade_machine.tscn" id="1_2y75v"]
+[ext_resource type="Script" path="res://Game_Data/Field/field_base.gd" id="1_8am38"]
+[ext_resource type="Script" path="res://Game_Data/Flow/scheduler.gd" id="2_5i4ps"]
+[ext_resource type="PackedScene" uid="uid://pit6okx7gsxq" path="res://Game_Data/OBJ/FieldTransition.tscn" id="2_y5j6w"]
+
+[sub_resource type="Resource" id="Resource_8of16"]
+script = ExtResource("2_5i4ps")
+schedules = Array[Resource("res://Game_Data/Flow/schedule.gd")]([])
+
+[node name="field" type="Node2D"]
+process_mode = 1
+scale = Vector2(0.65, 0.65)
+script = ExtResource("1_8am38")
+scheduler = SubResource("Resource_8of16")
+
+[node name="Default_MC_Pos" type="Marker2D" parent="."]
+position = Vector2(496, 448)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+y_sort_enabled = true
+polygon = PackedVector2Array(-376, -448, -384, 784, 1784, 800, 1824, -440, -608, -456, -440, -568, 1968, -568, 1888, 944, -648, 904, -632, -504)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+y_sort_enabled = true
+polygon = PackedVector2Array(360, -192, -344, 608, 1288, 640, 1616, -216, 360, -192, 360, -424, 1720, -392, 1456, 712, -512, 664, 360, -424)
+
+[node name="ArcadeMachine" parent="." instance=ExtResource("1_2y75v")]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(-80, -16)
+
+[node name="ArcadeMachine2" parent="." instance=ExtResource("1_2y75v")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(8, -112)
+
+[node name="ArcadeMachine3" parent="." instance=ExtResource("1_2y75v")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(88, -200)
+
+[node name="ArcadeMachine4" parent="." instance=ExtResource("1_2y75v")]
+y_sort_enabled = true
+position = Vector2(160, -264)
+
+[node name="ArcadeMachine5" parent="." instance=ExtResource("1_2y75v")]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(224, -16)
+
+[node name="ArcadeMachine6" parent="." instance=ExtResource("1_2y75v")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(312, -112)
+
+[node name="ArcadeMachine7" parent="." instance=ExtResource("1_2y75v")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(392, -200)
+
+[node name="ArcadeMachine8" parent="." instance=ExtResource("1_2y75v")]
+y_sort_enabled = true
+position = Vector2(464, -264)
+
+[node name="ArcadeMachine9" parent="." instance=ExtResource("1_2y75v")]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(528, -32)
+
+[node name="ArcadeMachine10" parent="." instance=ExtResource("1_2y75v")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(616, -128)
+
+[node name="ArcadeMachine11" parent="." instance=ExtResource("1_2y75v")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(696, -216)
+
+[node name="ArcadeMachine12" parent="." instance=ExtResource("1_2y75v")]
+y_sort_enabled = true
+position = Vector2(768, -280)
+
+[node name="ArcadeMachine13" parent="." instance=ExtResource("1_2y75v")]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(832, -24)
+
+[node name="ArcadeMachine14" parent="." instance=ExtResource("1_2y75v")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(920, -120)
+
+[node name="ArcadeMachine15" parent="." instance=ExtResource("1_2y75v")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1000, -208)
+
+[node name="ArcadeMachine16" parent="." instance=ExtResource("1_2y75v")]
+y_sort_enabled = true
+position = Vector2(1072, -272)
+
+[node name="Area2D" parent="." instance=ExtResource("2_y5j6w")]
+position = Vector2(424, 616)
+
+[node name="Graphics" type="CanvasGroup" parent="."]
+
+[node name="BG" type="Polygon2D" parent="Graphics"]
+z_index = -1
+y_sort_enabled = true
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-800, -701.539, -775.385, 1009.23, 2227.69, 1083.08, 2129.23, -652.308)
+
+[node name="Floor" type="Polygon2D" parent="Graphics"]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-672, 400)
+color = Color(0.603922, 0.603922, 0.603922, 1)
+polygon = PackedVector2Array(1032, -592, 328, 208, 1960, 240, 2288, -616)
+
+[node name="Exit" type="Polygon2D" parent="Graphics/Floor"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(672, -400)
+color = Color(1, 1, 1, 0.639216)
+polygon = PackedVector2Array(352, 680, 368, 608, 424, 560, 472, 608, 472, 680)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/Floor"]
+y_sort_enabled = true
+color = Color(0.564706, 0, 0.568627, 1)
+polygon = PackedVector2Array(600, -16, 1952, -8, 2176, -536, 1056, -560)
+
+[node name="BackWall" type="Polygon2D" parent="Graphics"]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-672, 400)
+color = Color(0.427451, 0.427451, 0.427451, 1)
+polygon = PackedVector2Array(1032, -592, 1040, -832, 2296, -832, 2288, -616)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/BackWall"]
+z_index = 2
+color = Color(1, 1, 0.890196, 1)
+polygon = PackedVector2Array(1256, -528, 1256, -608, 1264, -616, 1304, -640, 1352, -640, 1312, -608, 1376, -608, 1520, -608, 1568, -648, 1616, -648, 1616, -584, 1568, -528)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/BackWall/Polygon2D"]
+color = Color(1, 0.764706, 0.443137, 1)
+polygon = PackedVector2Array(1616, -640, 1560, -584, 1256, -584, 1256, -528, 1568, -528, 1616, -584)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Graphics/BackWall/Polygon2D"]
+color = Color(1, 0.890196, 0.792157, 1)
+polygon = PackedVector2Array(1352, -640, 1352, -624, 1328, -608, 1312, -608, 1256, -608, 1264, -616, 1320.91, -615.125)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Graphics/BackWall"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Graphics/BackWall/StaticBody2D"]
+polygon = PackedVector2Array(1304, -640, 1264, -616, 1256, -608, 1256, -528, 1568, -528, 1616, -584, 1616, -648, 1568, -648, 1520, -608, 1328, -608, 1352, -624, 1352, -640)
+
+[node name="LeftWall" type="Polygon2D" parent="Graphics"]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-672, 400)
+color = Color(0.498039, 0.498039, 0.498039, 1)
+polygon = PackedVector2Array(1032, -592, 328, 208, 328, -80, 1040, -832)

@@ -1,0 +1,336 @@
+[gd_scene load_steps=17 format=3 uid="uid://dcofivtauja60"]
+
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/Rank Up.gd" id="1_3gc1j"]
+[ext_resource type="Texture2D" uid="uid://dohoiec3wbtbf" path="res://Game_Data/Graphics/Atlas/spr_crest.tres" id="2_n2afi"]
+[ext_resource type="AudioStream" uid="uid://drujboxylp5o" path="res://Game_Data/Audio/SFX/BraveHeart.mp3" id="3_usalq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nygrt"]
+atlas = ExtResource("2_n2afi")
+region = Rect2(19, 0, 239, 239)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ia5t"]
+atlas = ExtResource("2_n2afi")
+region = Rect2(301, 0, 239, 239)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubbr2"]
+atlas = ExtResource("2_n2afi")
+region = Rect2(19, 239, 239, 239)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1bqn"]
+atlas = ExtResource("2_n2afi")
+region = Rect2(583, 239, 239, 239)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abyyd"]
+atlas = ExtResource("2_n2afi")
+region = Rect2(865, 0, 239, 239)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugukn"]
+atlas = ExtResource("2_n2afi")
+region = Rect2(301, 239, 239, 239)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptqap"]
+atlas = ExtResource("2_n2afi")
+region = Rect2(583, 0, 239, 239)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii0rf"]
+atlas = ExtResource("2_n2afi")
+region = Rect2(1429, 0, 239, 239)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k7so"]
+atlas = ExtResource("2_n2afi")
+region = Rect2(1147, 0, 239, 239)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jsy2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nygrt")
+}],
+"loop": true,
+"name": &"courage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ia5t")
+}],
+"loop": true,
+"name": &"friendship",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubbr2")
+}],
+"loop": true,
+"name": &"hope",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1bqn")
+}],
+"loop": true,
+"name": &"kindness",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abyyd")
+}],
+"loop": true,
+"name": &"knowledge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugukn")
+}],
+"loop": true,
+"name": &"light",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptqap")
+}],
+"loop": true,
+"name": &"love",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii0rf")
+}],
+"loop": true,
+"name": &"reliability",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k7so")
+}],
+"loop": true,
+"name": &"sincerity",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_eosvg"]
+resource_name = "FadeIn"
+length = 3.3333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Evolution Bar:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_stuff_visible"
+}, {
+"args": [],
+"method": &"start_timers"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("In")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_usalq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_3giol"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Evolution Bar:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x08mn"]
+_data = {
+"FadeIn": SubResource("Animation_eosvg"),
+"FadeOut": SubResource("Animation_3giol")
+}
+
+[node name="Rank Up" type="Node2D"]
+script = ExtResource("1_3gc1j")
+rank = 6
+
+[node name="Evolution Bar" type="Polygon2D" parent="."]
+position = Vector2(0, 648)
+scale = Vector2(1, 1e-05)
+color = Color(0.172549, 1, 0.396078, 0.635294)
+offset = Vector2(0, -648)
+polygon = PackedVector2Array(816, 648, 976, 0, 1152, 0, 1048, 648)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Evolution Bar"]
+position = Vector2(11, -647)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(1024, 624, 832, 624, 848, 592, 1032, 592)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(27, -695)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(1024, 624, 832, 624, 840, 592, 1032, 592)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(43, -743)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(1016, 624, 832, 624, 840, 592, 1024, 592)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(51, -791)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(1016, 624, 832, 624, 840, 592, 1024, 592)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(67, -839)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(1008, 624, 824, 624, 840, 592, 1016, 592)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(83, -887)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(1000, 624, 824, 624, 832, 592, 1008, 592)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(91, -935)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(1000, 624, 824, 624, 840, 592, 1008, 592)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(107, -983)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(992, 624, 824, 624, 832, 592, 1000, 592)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(123, -1031)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(984, 624, 816, 624, 824, 592, 992, 592)
+
+[node name="Polygon2D11" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(131, -1079)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(984, 624, 816, 624, 832, 592, 992, 592)
+
+[node name="Polygon2D12" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(147, -1127)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(976, 624, 816, 624, 824, 592, 984, 592)
+
+[node name="Polygon2D13" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(163, -1175)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(968, 624, 816, 624, 824, 592, 976, 592)
+
+[node name="Polygon2D14" type="Polygon2D" parent="Evolution Bar"]
+visible = false
+position = Vector2(171, -1223)
+color = Color(0.615686, 0.929412, 0.768627, 1)
+polygon = PackedVector2Array(968, 624, 816, 624, 824, 592, 976, 592)
+
+[node name="Icon Crest" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(832, 523)
+sprite_frames = SubResource("SpriteFrames_jsy2j")
+animation = &"courage"
+
+[node name="Blink Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Fill Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Rank Up" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 440.0
+offset_top = 544.0
+offset_right = 641.0
+offset_bottom = 602.0
+scale = Vector2(1.532, 1.532)
+theme_override_font_sizes/normal_font_size = 38
+text = "RANK UP !"
+
+[node name="Name" type="RichTextLabel" parent="."]
+visible = false
+offset_top = 544.0
+offset_right = 290.0
+offset_bottom = 602.0
+scale = Vector2(1.532, 1.532)
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "[center]Taichi Kamiya"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x08mn")
+}
+
+[node name="In" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_usalq")
+
+[node name="Beep" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Out" type="AudioStreamPlayer2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+color = Color(1, 1, 1, 0)
+
+[connection signal="timeout" from="Blink Timer" to="." method="_on_blink_timer_timeout"]
+[connection signal="timeout" from="Fill Timer" to="." method="_on_fill_timer_timeout"]

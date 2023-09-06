@@ -1,0 +1,130 @@
+[gd_resource type="Resource" script_class="BattleMessage" load_steps=17 format=3 uid="uid://bq3wly5nte6dq"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/BattleMessage.gd" id="1_ckhex"]
+[ext_resource type="Resource" uid="uid://csqcve530i2hb" path="res://Game_Data/Battle/Message/Final/KenShortcut1.tres" id="2_2m0ai"]
+[ext_resource type="Resource" uid="uid://cxc5f55ym58ln" path="res://Game_Data/Battle/Message/Final/KenFinal.tres" id="3_cm7sn"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/VirtueMessage.gd" id="3_d6fak"]
+[ext_resource type="Script" path="res://Game_Data/Battle/Message/DictionaryVirtueMessage.gd" id="4_2oimc"]
+
+[sub_resource type="Resource" id="Resource_dtlwa"]
+script = ExtResource("1_ckhex")
+close_message_box = false
+time = 15
+drain = 7
+line1 = "> <davis>'s <virtue> did little."
+line2 = ""
+line3 = ""
+emits_virtues = Array[String]([])
+loops = false
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+
+[sub_resource type="Resource" id="Resource_kjj2t"]
+script = ExtResource("3_d6fak")
+virtue = "Kindness"
+msg = SubResource("Resource_dtlwa")
+
+[sub_resource type="Resource" id="Resource_p7eh5"]
+script = ExtResource("1_ckhex")
+close_message_box = false
+time = 15
+drain = 7
+line1 = "> <davis> tells <ken> that <tk> is wrong"
+line2 = "\"You're a good person <ken>\""
+line3 = "\"You have a future\""
+emits_virtues = Array[String]([])
+dont_care_message = ExtResource("3_cm7sn")
+loops = false
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+
+[sub_resource type="Resource" id="Resource_ir84j"]
+script = ExtResource("3_d6fak")
+virtue = "Hope"
+msg = SubResource("Resource_p7eh5")
+
+[sub_resource type="Resource" id="Resource_ynpf5"]
+script = ExtResource("4_2oimc")
+dictionary = Array[ExtResource("3_d6fak")]([SubResource("Resource_kjj2t"), SubResource("Resource_ir84j")])
+
+[sub_resource type="Resource" id="Resource_5x6p4"]
+script = ExtResource("1_ckhex")
+close_message_box = false
+time = 15
+drain = 7
+line1 = "> <davis> greets <tk>."
+line2 = "<tk> says \"There is no future for this criminal\""
+line3 = ""
+emits_virtues = Array[String]([])
+virtue_response = SubResource("Resource_ynpf5")
+loops = true
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+
+[sub_resource type="Resource" id="Resource_vl4r3"]
+script = ExtResource("3_d6fak")
+virtue = "Friendship"
+msg = ExtResource("2_2m0ai")
+
+[sub_resource type="Resource" id="Resource_xuvba"]
+script = ExtResource("3_d6fak")
+virtue = "Courage"
+msg = ExtResource("2_2m0ai")
+
+[sub_resource type="Resource" id="Resource_molay"]
+script = ExtResource("3_d6fak")
+virtue = "Sincerity"
+msg = ExtResource("2_2m0ai")
+
+[sub_resource type="Resource" id="Resource_dm1eh"]
+script = ExtResource("4_2oimc")
+dictionary = Array[ExtResource("3_d6fak")]([SubResource("Resource_vl4r3"), SubResource("Resource_xuvba"), SubResource("Resource_molay")])
+
+[sub_resource type="Resource" id="Resource_vkbmp"]
+script = ExtResource("1_ckhex")
+close_message_box = false
+time = 15
+drain = 7
+line1 = "> <tk> is guarding the cross."
+line2 = ""
+line3 = ""
+emits_virtues = Array[String]([])
+virtue_response = SubResource("Resource_dm1eh")
+dont_care_message = SubResource("Resource_5x6p4")
+loops = false
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+
+[resource]
+script = ExtResource("1_ckhex")
+close_message_box = false
+time = 15
+drain = 7
+line1 = "> <davis> decided to investigate."
+line2 = "<ken> needs <virtue>."
+line3 = ""
+emits_virtues = Array[String]([])
+dont_care_message = SubResource("Resource_vkbmp")
+loops = false
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}

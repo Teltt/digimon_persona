@@ -1,0 +1,197 @@
+[gd_scene load_steps=11 format=3 uid="uid://cjqxohlii6pj3"]
+
+[ext_resource type="PackedScene" uid="uid://duqcfx8p45ksl" path="res://Game_Data/OBJ/world/desk.tscn" id="1_0annm"]
+[ext_resource type="Script" path="res://Game_Data/Field/field_base.gd" id="1_kgt0w"]
+[ext_resource type="Script" path="res://Game_Data/Flow/scheduler.gd" id="2_3l34g"]
+[ext_resource type="Resource" uid="uid://1dhwdlladoqj" path="res://Game_Data/Message/Common/VmonAfterSchool April.tres" id="2_aa4jc"]
+[ext_resource type="Script" path="res://Game_Data/Flow/schedule.gd" id="3_8ad2w"]
+[ext_resource type="PackedScene" uid="uid://7rvmmm455j0s" path="res://Game_Data/OBJ/vmon_field.tscn" id="3_8egdi"]
+[ext_resource type="Script" path="res://Game_Data/OBJ/FieldTransition.gd" id="7_qvl26"]
+
+[sub_resource type="Resource" id="Resource_4kak4"]
+script = ExtResource("3_8ad2w")
+name = "NPC_VMon"
+from_month = 4
+from_day = 12
+time = 4
+to_month = 4
+to_day = 14
+child_schedule = Array[ExtResource("3_8ad2w")]([])
+message = ExtResource("2_aa4jc")
+scene = ExtResource("3_8egdi")
+spawn_if_function = ""
+spawn_expression = ""
+metadata/_editor_prop_ptr_spawn_location = NodePath("VMON_POS")
+
+[sub_resource type="Resource" id="Resource_k5ok6"]
+script = ExtResource("2_3l34g")
+schedules = Array[ExtResource("3_8ad2w")]([SubResource("Resource_4kak4")])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rxx3"]
+radius = 48.6621
+
+[node name="field" type="Node2D"]
+process_mode = 1
+y_sort_enabled = true
+script = ExtResource("1_kgt0w")
+scheduler = SubResource("Resource_k5ok6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(336, 0, 904, 64, 952, 208, 792, 632, 104, 480, 120, 464, 760, 600, 832, 408, 888, 264, 488, 200, 448, 264, 296, 224, 120, 456, 128, 256)
+
+[node name="Desk4" parent="." instance=ExtResource("1_0annm")]
+z_index = 0
+position = Vector2(344, 280)
+
+[node name="Desk" parent="." instance=ExtResource("1_0annm")]
+z_index = 0
+position = Vector2(472, 296)
+
+[node name="Desk2" parent="." instance=ExtResource("1_0annm")]
+z_index = 0
+position = Vector2(584, 328)
+
+[node name="Desk3" parent="." instance=ExtResource("1_0annm")]
+z_index = 0
+position = Vector2(704, 360)
+
+[node name="Desk5" parent="." instance=ExtResource("1_0annm")]
+z_index = 0
+position = Vector2(384, 400)
+
+[node name="Desk6" parent="." instance=ExtResource("1_0annm")]
+z_index = 0
+position = Vector2(504, 424)
+
+[node name="Desk7" parent="." instance=ExtResource("1_0annm")]
+z_index = 0
+position = Vector2(624, 456)
+
+[node name="Desk8" parent="." instance=ExtResource("1_0annm")]
+z_index = 0
+position = Vector2(264, 368)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="Polygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-64, -64, -64, 704, 1216, 704, 1216, -64, -256, -64, -256, -128, 1280, -128, 1280, 768, -264, 768, -256, -64)
+
+[node name="Enterance" type="Marker2D" parent="."]
+position = Vector2(840, 320)
+
+[node name="To_Hallway" type="Area2D" parent="."]
+position = Vector2(840, 319)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("7_qvl26")
+teleport_mc_to = Vector2(768, 120)
+field = "res://Game_Data/Field/field_hallway.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="To_Hallway"]
+shape = SubResource("CircleShape2D_3rxx3")
+
+[node name="Default_MC_Pos" type="Marker2D" parent="."]
+position = Vector2(560, 240)
+
+[node name="VMON_POS" type="Marker2D" parent="."]
+position = Vector2(488, 280)
+gizmo_extents = 45.6
+
+[node name="Graphics" type="CanvasGroup" parent="."]
+
+[node name="BG" type="Polygon2D" parent="Graphics"]
+z_index = -9
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-64, 704, -64, -64, 1216, -64, 1216, 704)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics"]
+
+[node name="FrontWall" type="Polygon2D" parent="Graphics"]
+z_index = -1
+color = Color(0.847059, 1, 0.878431, 1)
+polygon = PackedVector2Array(904, 64, 336, 0, 336, 20.9209, 336, 168, 888, 264)
+uv = PackedVector2Array(0, 0, 1, 0, 0, 1, 1, 1)
+
+[node name="ChalkBoard" type="Polygon2D" parent="Graphics/FrontWall"]
+color = Color(0.137255, 0.360784, 0.164706, 1)
+polygon = PackedVector2Array(472, 48, 472, 128, 736, 168, 736, 88)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/FrontWall/ChalkBoard"]
+color = Color(0.227451, 0.227451, 0.227451, 1)
+polygon = PackedVector2Array(472, 128, 464, 136, 728, 176, 736, 168)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Graphics/FrontWall/ChalkBoard"]
+color = Color(0.560784, 0.180392, 0, 1)
+polygon = PackedVector2Array(472, 128, 464, 48, 472, 40, 736, 80, 744, 88, 736, 168, 736, 88, 472, 48)
+
+[node name="Desk9" type="Polygon2D" parent="Graphics/FrontWall/ChalkBoard"]
+y_sort_enabled = true
+position = Vector2(-8, -144)
+color = Color(0.133333, 0.133333, 0.133333, 1)
+polygon = PackedVector2Array(376, 328, 376, 384, 448, 400, 480, 360, 480, 304, 448, 344)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Graphics/FrontWall/ChalkBoard/Desk9"]
+y_sort_enabled = true
+color = Color(0.545098, 0.196078, 0.141176, 1)
+polygon = PackedVector2Array(376, 328, 368, 320, 400.394, 287.606, 424, 288, 480, 304, 488, 312, 464, 336, 448, 344)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/FrontWall/ChalkBoard/Desk9"]
+y_sort_enabled = true
+polygon = PackedVector2Array(408, 320, 448, 328, 456, 312, 424, 304)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Graphics/FrontWall/ChalkBoard/Desk9"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(416, 304, 432, 296, 424, 288)
+
+[node name="LeftWall" type="Polygon2D" parent="Graphics"]
+z_index = -3
+color = Color(0.909804, 0.909804, 0.909804, 1)
+polygon = PackedVector2Array(128, 448, 128, 256, 336, 0, 336, 168)
+
+[node name="Window" type="Polygon2D" parent="Graphics/LeftWall"]
+color = Color(0, 0.666667, 1, 1)
+polygon = PackedVector2Array(288, 112, 240, 160, 240, 216, 288, 160)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Graphics/LeftWall/Window"]
+polygon = PackedVector2Array(240, 160, 288, 112, 288, 160, 240, 216, 240, 160, 248, 160, 248, 192, 256, 184, 256, 152, 264, 144, 264, 176, 280, 160, 280, 128, 248, 160)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/LeftWall/Window"]
+z_index = 4
+position = Vector2(-24, 0)
+scale = Vector2(1.09091, 1)
+color = Color(1, 1, 1, 0.423529)
+polygon = PackedVector2Array(264, 168, 320, 232, 320, 200, 352, 200, 337.333, 184, 352, 176, 280, 152)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Graphics/LeftWall/Window"]
+z_index = 4
+position = Vector2(-24, 24)
+color = Color(1, 1, 1, 0.423529)
+polygon = PackedVector2Array(272, 160, 312, 240, 312, 216, 344, 216, 280, 152)
+
+[node name="Window2" type="Polygon2D" parent="Graphics/LeftWall"]
+position = Vector2(-80, 104)
+color = Color(0, 0.666667, 1, 1)
+polygon = PackedVector2Array(288, 112, 240, 160, 240, 216, 288, 160)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Graphics/LeftWall/Window2"]
+polygon = PackedVector2Array(240, 160, 288, 112, 288, 160, 240, 216, 240, 160, 248, 160, 248, 192, 256, 184, 256, 152, 264, 144, 264, 176, 280, 160, 280, 128, 248, 160)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Graphics/LeftWall/Window2"]
+z_index = 2
+position = Vector2(-24, 24)
+color = Color(1, 1, 1, 0.423529)
+polygon = PackedVector2Array(272, 160, 312, 240, 312, 208, 352, 208, 280, 152)
+
+[node name="Floor" type="Polygon2D" parent="Graphics"]
+z_index = -2
+color = Color(0.345098, 0.345098, 0.345098, 1)
+polygon = PackedVector2Array(760, 600, 112, 464, 336, 168, 888, 264)
+uv = PackedVector2Array(0, 0, 1, 0, 0, 1, 1, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="Graphics/Floor"]
+color = Color(0.560784, 0.560784, 0.560784, 1)
+polygon = PackedVector2Array(872, 392, 784, 352, 824, 272, 904, 288)

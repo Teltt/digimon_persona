@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvsoo65dgx2p5"]
+
+[ext_resource type="Script" path="res://Game_Data/Battle/Fighters/Digimon.gd" id="1_vvyie"]
+[ext_resource type="Resource" uid="uid://xrbdpq8rtwgr" path="res://Game_Data/Battle/Fighters/VMon/Fighter.tres" id="2_o3xx5"]
+[ext_resource type="Texture2D" uid="uid://bqpg3g5wfdr2p" path="res://Game_Data/Graphics/Tex/VMon.png" id="3_l656l"]
+[ext_resource type="Script" path="res://Game_Data/UI_Scenes/HealthBar.gd" id="4_ekxs7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vywg6"]
+bg_color = Color(0.376471, 0.376471, 0.376471, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.290196, 0.290196, 0.290196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43cev"]
+bg_color = Color(0.615686, 0.788235, 0.396078, 1)
+
+[node name="Digimon" type="Node2D"]
+position = Vector2(200.033, 200.051)
+script = ExtResource("1_vvyie")
+res = ExtResource("2_o3xx5")
+metadata/_edit_group_ = true
+
+[node name="Health" type="ProgressBar" parent="."]
+modulate = Color(0.192157, 1, 0.431373, 1)
+anchors_preset = -1
+anchor_left = -0.0663265
+anchor_top = -0.102865
+anchor_right = 0.0408164
+anchor_bottom = -0.00130206
+offset_left = -31.8
+offset_top = -103.8
+offset_right = 80.2
+offset_bottom = -75.8
+theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 10
+theme_override_styles/background = SubResource("StyleBoxFlat_vywg6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_43cev")
+max_value = 4.0
+step = 1.0
+allow_lesser = true
+show_percentage = false
+script = ExtResource("4_ekxs7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Beats" type="Label" parent="Health"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00250657
+anchor_top = 0.487655
+anchor_right = -0.00250657
+anchor_bottom = 0.487655
+offset_right = 112.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.321569, 0.698039, 0.243137, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+text = "0:0"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Health" type="Label" parent="Health"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00250657
+anchor_top = -0.00617275
+anchor_right = -0.00250657
+anchor_bottom = -0.00617275
+offset_right = 112.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.321569, 0.698039, 0.243137, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+text = "Health"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_l656l")

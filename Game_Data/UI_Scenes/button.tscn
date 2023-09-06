@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://be7gfeshyhg8s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5keuo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d675e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w8tlo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1uxw2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oo0ty"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_4f83r"]
+device = -1
+keycode = 75
+unicode = 107
+
+[sub_resource type="Shortcut" id="Shortcut_2lt0i"]
+events = [SubResource("InputEventKey_4f83r")]
+
+[node name="Button" type="Button"]
+offset_right = 97.0
+offset_bottom = 27.0
+scale = Vector2(0.6, 0.6)
+size_flags_horizontal = 6
+size_flags_vertical = 0
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.67451, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5keuo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d675e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w8tlo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1uxw2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oo0ty")
+toggle_mode = true
+shortcut = SubResource("Shortcut_2lt0i")
+text = "Debug"

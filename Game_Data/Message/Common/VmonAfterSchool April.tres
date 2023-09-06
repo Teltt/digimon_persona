@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=3 format=3 uid="uid://1dhwdlladoqj"]
+
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="1_8j6h5"]
+
+[sub_resource type="Resource" id="Resource_epnjb"]
+script = ExtResource("1_8j6h5")
+is_digivolution_question = false
+line1 = "I wonder why?"
+line2 = ""
+line3 = ""
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
+
+[resource]
+script = ExtResource("1_8j6h5")
+is_digivolution_question = false
+line1 = "Hiya Davis!"
+line2 = "School sure is empty today!"
+line3 = ""
+next_message = SubResource("Resource_epnjb")
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = "Vmon"
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false
