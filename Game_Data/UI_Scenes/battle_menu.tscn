@@ -1,12 +1,9 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://bil6h1k5na170"]
 
 [ext_resource type="Script" path="res://Game_Data/UI_Scenes/battle_menu.gd" id="1_12oum"]
 [ext_resource type="PackedScene" uid="uid://bok8v1br3e0vy" path="res://Game_Data/UI_Scenes/skill.tscn" id="2_j80ei"]
 [ext_resource type="PackedScene" uid="uid://bmmd1rrnnwlwa" path="res://Game_Data/UI_Scenes/scroll_box.tscn" id="3_5j1me"]
 [ext_resource type="PackedScene" uid="uid://b2l6ra6wylpnh" path="res://Game_Data/UI_Scenes/battle_msg.tscn" id="4_22lf0"]
-[ext_resource type="AudioStream" path="res://Game_Data/Audio/SFX/battleTurn.ogg" id="6_0klou"]
-[ext_resource type="AudioStream" path="res://Game_Data/Audio/SFX/battleTurnEnd.ogg" id="7_4auat"]
-[ext_resource type="AudioStream" path="res://Game_Data/Audio/SFX/select.ogg" id="8_xt8dq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bn44"]
 bg_color = Color(0.145098, 0.219608, 0.145098, 1)
@@ -235,14 +232,11 @@ button = NodePath("../Act")
 [node name="Sfx" type="Node" parent="."]
 
 [node name="TurnStart" type="AudioStreamPlayer2D" parent="Sfx"]
-stream = ExtResource("6_0klou")
 
 [node name="TurnEnd" type="AudioStreamPlayer2D" parent="Sfx"]
-stream = ExtResource("7_4auat")
 volume_db = -13.893
 
 [node name="Select" type="AudioStreamPlayer2D" parent="Sfx"]
-stream = ExtResource("8_xt8dq")
 volume_db = -8.0
 
 [connection signal="virtue" from="." to="msg" method="_on_battle_menu_virtue"]

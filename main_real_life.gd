@@ -8,6 +8,7 @@ extends Node2D
 @onready var camera = $Camera
 @onready var mc = $field/mc_field
 var tasks :Array[Task] = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Game.field = field
@@ -91,9 +92,9 @@ func progress_date(by_days = 1):
 	date.set_date(month,Game.data.day)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	get_tree().paused = true
-#	if is_instance_valid(field):
-#		field.set_visible(true)
-#	if is_instance_valid(event):
-#		event.set_visible(true)
+	#get_tree().paused = true
+	if is_instance_valid(field):
+		field.set_visible(true)
+	if is_instance_valid(event):
+		event.set_visible(true)
 	pass

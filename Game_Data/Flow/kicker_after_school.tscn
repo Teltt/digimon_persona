@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://hciwnr07pbvd"]
+
+[ext_resource type="PackedScene" uid="uid://cm3jwhd2jtp6l" path="res://Game_Data/Flow/field_kicker.tscn" id="1_ptu70"]
+
+[node name="field_kicker" instance=ExtResource("1_ptu70")]
+teleport_mc_to = "Default_MC_Pos"
+field = "res://Game_Data/Field/field_classroom.tscn"
+change_time = true
+time = 4

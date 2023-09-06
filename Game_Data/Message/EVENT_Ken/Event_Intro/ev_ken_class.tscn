@@ -4,14 +4,14 @@
 [ext_resource type="Script" path="res://Game_Data/Flow/event.gd" id="1_ewc7b"]
 [ext_resource type="Script" path="res://Game_Data/Flow/scheduler.gd" id="2_ol7nd"]
 [ext_resource type="Script" path="res://Game_Data/OBJ/EventSprite.gd" id="3_11jkx"]
-[ext_resource type="Texture2D" uid="uid://ca0po1lewuqmq" path="res://Game_Data/Graphics/Tex/Ken.png" id="5_7aubn"]
+[ext_resource type="Texture2D" uid="uid://bdneck6ifgprp" path="res://Game_Data/Graphics/Tex/Ken.png" id="5_7aubn"]
 [ext_resource type="Resource" uid="uid://bd24arq7lcfqy" path="res://Game_Data/Message/EVENT_Ken/Event_Intro/RealGossip.tres" id="5_278ur"]
 [ext_resource type="Texture2D" uid="uid://tjldm5fqc0hb" path="res://Game_Data/Graphics/Tex/Davis.png" id="7_k5rd6"]
 [ext_resource type="Animation" uid="uid://wgaj1jouwro6" path="res://Game_Data/Graphics/Anim/jump.res" id="8_iusbq"]
 [ext_resource type="Animation" uid="uid://cx8cnkkwa4lrl" path="res://Game_Data/Graphics/Anim/walk.res" id="9_0x1ek"]
 [ext_resource type="Resource" uid="uid://beg75olskxc1w" path="res://Game_Data/Message/EVENT_Ken/Event_Intro/KenIntro.tres" id="9_iyyx1"]
 [ext_resource type="Texture2D" uid="uid://bga5d7xv5scpu" path="res://Game_Data/Graphics/Tex/Female.png" id="11_r2qtf"]
-[ext_resource type="Texture2D" uid="uid://dkm1g5sa6ukio" path="res://Game_Data/Graphics/Tex/Male.png" id="12_hsjq2"]
+[ext_resource type="Texture2D" uid="uid://de6yw4wfo1033" path="res://Game_Data/Graphics/Tex/Male.png" id="12_hsjq2"]
 
 [sub_resource type="Resource" id="Resource_lydtd"]
 script = ExtResource("2_ol7nd")

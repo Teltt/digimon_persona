@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://dcofivtauja60"]
+[gd_scene load_steps=16 format=3 uid="uid://dcofivtauja60"]
 
 [ext_resource type="Script" path="res://Game_Data/UI_Scenes/Rank Up.gd" id="1_3gc1j"]
 [ext_resource type="Texture2D" uid="uid://dohoiec3wbtbf" path="res://Game_Data/Graphics/Atlas/spr_crest.tres" id="2_n2afi"]
-[ext_resource type="AudioStream" uid="uid://drujboxylp5o" path="res://Game_Data/Audio/SFX/BraveHeart.mp3" id="3_usalq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nygrt"]
 atlas = ExtResource("2_n2afi")
@@ -169,7 +168,7 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_usalq")
+"stream": null
 }],
 "times": PackedFloat32Array(0)
 }
@@ -322,7 +321,6 @@ libraries = {
 }
 
 [node name="In" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_usalq")
 
 [node name="Beep" type="AudioStreamPlayer2D" parent="."]
 

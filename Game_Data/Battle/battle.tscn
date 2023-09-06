@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Game_Data/Battle/ATB.gd" id="6_egk6c"]
 [ext_resource type="Resource" uid="uid://bvrqby0waafdp" path="res://Game_Data/Battle/Fighters/Davis/Character.tres" id="8_0ti8d"]
 [ext_resource type="Texture2D" uid="uid://d0exru2tetu43" path="res://Game_Data/Graphics/Tex/Target.png" id="9_13lrj"]
-[ext_resource type="PackedScene" uid="uid://bn7q7gsaefbqg" path="res://Game_Data/UI_Scenes/battle_menu.tscn" id="10_t00ke"]
+[ext_resource type="PackedScene" uid="uid://bil6h1k5na170" path="res://Game_Data/UI_Scenes/battle_menu.tscn" id="10_t00ke"]
 [ext_resource type="PackedScene" uid="uid://b2217nbomwyvi" path="res://Game_Data/UI_Scenes/turn_mgr.tscn" id="13_m2j1j"]
 [ext_resource type="Script" path="res://Game_Data/UI_Scenes/turn_mgr.gd" id="14_y08wj"]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgbw63maye64w"]
+[gd_scene load_steps=11 format=3 uid="uid://dgbw63maye64w"]
 
 [ext_resource type="Script" path="res://main_real_life.gd" id="1_hmi25"]
 [ext_resource type="PackedScene" uid="uid://b03aadav3mbkg" path="res://Game_Data/UI_Scenes/msg_box.tscn" id="1_ifdf8"]
+[ext_resource type="PackedScene" uid="uid://bt1ay6nf8u367" path="res://Game_Data/Field/field_bedroom.tscn" id="2_p7a5j"]
 [ext_resource type="PackedScene" uid="uid://xb8liftebxpq" path="res://Game_Data/Battle/battle.tscn" id="4_cdjs2"]
 [ext_resource type="PackedScene" uid="uid://dk58hfsmunixh" path="res://Game_Data/OBJ/mc_field.tscn" id="4_d1r0y"]
 [ext_resource type="Script" path="res://Game_Data/UI_Scenes/Camera.gd" id="5_it8kr"]
@@ -16,10 +17,13 @@ size = Vector2(1152, 648)
 process_mode = 3
 script = ExtResource("1_hmi25")
 
-[node name="field@mc_field" parent="." instance=ExtResource("4_d1r0y")]
+[node name="field" parent="." instance=ExtResource("2_p7a5j")]
+
+[node name="mc_field" parent="field" instance=ExtResource("4_d1r0y")]
 position = Vector2(552, 280)
 
 [node name="Battle" parent="." instance=ExtResource("4_cdjs2")]
+visible = false
 
 [node name="Camera" type="CharacterBody2D" parent="."]
 process_mode = 3

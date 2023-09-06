@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Game_Data/Field/field_base.gd" id="1_w544c"]
 [ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="2_loahb"]
-[ext_resource type="PackedScene" uid="uid://mff7sux2j771" path="res://Game_Data/Flow/kicker_after_school.tscn" id="3_5hyii"]
+[ext_resource type="PackedScene" uid="uid://hciwnr07pbvd" path="res://Game_Data/Flow/kicker_after_school.tscn" id="3_5hyii"]
 [ext_resource type="Script" path="res://Game_Data/Flow/schedule.gd" id="3_258fs"]
 [ext_resource type="Script" path="res://Game_Data/Flow/scheduler.gd" id="4_0ro5s"]
 [ext_resource type="Script" path="res://Game_Data/OBJ/npc.gd" id="6_0kaih"]
