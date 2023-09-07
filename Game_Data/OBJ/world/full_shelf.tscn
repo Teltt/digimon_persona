@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://x67apvhxjuuu"]
+
+[ext_resource type="PackedScene" uid="uid://086snh6xa7gh" path="res://Game_Data/OBJ/world/shelf.tscn" id="1_r7qsi"]
+[ext_resource type="Script" path="res://Game_Data/Field/sorter.gd" id="2_obj8v"]
+
+[node name="FullShelf" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(336, 64)
+metadata/_edit_group_ = true
+
+[node name="Shelf" parent="." instance=ExtResource("1_r7qsi")]
+position = Vector2(424, 264)
+rotation = -0.336849
+skew = 0.335103
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Shelf"]
+position = Vector2(0, 32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shelf/StaticBody2D2"]
+polygon = PackedVector2Array(16.9571, -2.39545, -33.9439, 20.7811, -59.3427, 4.38641, -8.44165, -18.7901)
+
+[node name="Shelf2" parent="." instance=ExtResource("1_r7qsi")]
+position = Vector2(424, 224)
+rotation = -0.336849
+skew = 0.335103
+
+[node name="Polygon2D4" type="Polygon2D" parent="Shelf2"]
+position = Vector2(0, 32)
+rotation = -0.593412
+skew = 1.1781
+color = Color(0.607843, 0.607843, 0.607843, 1)
+offset = Vector2(0, 15)
+polygon = PackedVector2Array(-92.806, -96.4218, -22.8265, -78.2753, -98.2001, -148.007, -168.18, -166.154)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-96, 80)
+points = PackedVector2Array(464, 240, 536, 208)
+script = ExtResource("2_obj8v")
+
+[node name="YSortPoint" type="Node2D" parent="Line2D"]
+position = Vector2(488, 232)

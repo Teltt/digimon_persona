@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4yjrbl6g4sbl"]
+
+[ext_resource type="Script" path="res://Game_Data/Field/sorter.gd" id="1_xytxb"]
+
+[node name="Counter" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color(1, 0.827451, 0.337255, 1)
+polygon = PackedVector2Array(505, 280, 505, 240, 648, 264, 648, 304)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+color = Color(0.839216, 0.643137, 0, 1)
+polygon = PackedVector2Array(728, 240, 728, 200, 648, 264, 648, 304)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+color = Color(0.509804, 0.188235, 0.584314, 1)
+polygon = PackedVector2Array(496, 248, 648, 272, 736, 200, 696, 192, 640, 240, 528, 224)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(139, 76)
+points = PackedVector2Array(365, 206, 508, 228, 590, 160)
+script = ExtResource("1_xytxb")
+
+[node name="YSortPoint" type="Node2D" parent="Line2D"]
+position = Vector2(501, 212)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(506, 281, 536, 264, 640, 280, 696, 232, 728, 240, 648, 304)

@@ -1,0 +1,95 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbmgkskjep5e"]
+
+[ext_resource type="Script" path="res://Game_Data/Field/sorter.gd" id="1_khciw"]
+
+[node name="Drinks" type="Node2D"]
+z_as_relative = false
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.717647, 0.717647, 0.717647, 1)
+polygon = PackedVector2Array(496, 240, 536, 208, 536, 168, 496, 200)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color(0.466667, 0.466667, 0.466667, 1)
+polygon = PackedVector2Array(400, 184, 496, 200, 496, 240, 400, 224)
+
+[node name="Polygon2D" type="Polygon2D" parent="Polygon2D2"]
+color = Color(0.270588, 0.705882, 1, 1)
+polygon = PackedVector2Array(408, 192, 408, 216, 488, 232, 488, 208)
+
+[node name="Polygon2D6" type="Polygon2D" parent="."]
+color = Color(0.364706, 0.364706, 0.364706, 1)
+polygon = PackedVector2Array(400, 184, 496, 200, 536, 168, 440, 152)
+
+[node name="Polygon2D" type="Polygon2D" parent="Polygon2D6"]
+color = Color(0.184314, 0.184314, 0.184314, 1)
+polygon = PackedVector2Array(421, 167, 421, 144, 536, 144, 536, 168, 515, 185)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Polygon2D6"]
+color = Color(0.2, 0.2, 0.2, 1)
+polygon = PackedVector2Array(536, 144, 536, 168, 515, 185, 515, 156)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Polygon2D6"]
+position = Vector2(-16, -4)
+color = Color(0.505882, 0.505882, 0.505882, 1)
+polygon = PackedVector2Array(441, 154, 441, 162, 437, 169, 444, 170, 446, 164, 446, 153)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Polygon2D6"]
+position = Vector2(-4, -3)
+color = Color(0.505882, 0.505882, 0.505882, 1)
+polygon = PackedVector2Array(441, 154, 441, 162, 437, 169, 444, 170, 446, 164, 446, 153)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Polygon2D6"]
+position = Vector2(32, 8)
+color = Color(0.505882, 0.505882, 0.505882, 1)
+polygon = PackedVector2Array(441, 154, 441, 162, 437, 169, 444, 170, 446, 164, 446, 153)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Polygon2D6"]
+position = Vector2(48, 8)
+color = Color(0.505882, 0.505882, 0.505882, 1)
+polygon = PackedVector2Array(441, 154, 441, 162, 437, 169, 444, 170, 446, 164, 446, 153)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(0, -40)
+color = Color(0.247059, 0.247059, 0.247059, 1)
+polygon = PackedVector2Array(400, 152, 496, 168, 536, 144, 440, 128)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+position = Vector2(0, -40)
+color = Color(0.305882, 0.305882, 0.305882, 1)
+polygon = PackedVector2Array(400, 152, 496, 168, 496, 208, 400, 192)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Polygon2D4"]
+color = Color(1, 0.564706, 0.603922, 1)
+polygon = PackedVector2Array(488, 176, 488, 200, 448, 192)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Polygon2D4"]
+color = Color(0.376471, 0.776471, 0.854902, 1)
+polygon = PackedVector2Array(488, 176, 448, 168, 448, 192)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Polygon2D4"]
+position = Vector2(-48, -8)
+color = Color(0.768627, 0.627451, 0.996078, 1)
+polygon = PackedVector2Array(488, 176, 488, 200, 448, 192)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Polygon2D4"]
+position = Vector2(-48, -8)
+color = Color(0.635294, 0.776471, 0.117647, 1)
+polygon = PackedVector2Array(488, 176, 448, 168, 448, 192)
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+position = Vector2(0, -40)
+color = Color(0.403922, 0.403922, 0.403922, 1)
+polygon = PackedVector2Array(536, 144, 496, 168, 496, 208, 536, 184)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(400, 224, 496, 240, 536, 208, 440, 192)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(400, 224, 536, 208)
+script = ExtResource("1_khciw")
+
+[node name="YSortPoint" type="Node2D" parent="Line2D"]
+position = Vector2(496, 209)

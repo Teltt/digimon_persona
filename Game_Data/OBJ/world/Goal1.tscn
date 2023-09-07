@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3yf0afpil68b"]
+
+[ext_resource type="Script" path="res://Game_Data/Field/sorter.gd" id="1_ydgtj"]
+
+[node name="Goal" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(56, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-40, -48)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-160, 336, 136, 136, 56, 80, -240, 288)
+
+[node name="Goal" type="Polygon2D" parent="."]
+position = Vector2(-40, 152)
+color = Color(1, 1, 0, 1)
+offset = Vector2(0, -200)
+polygon = PackedVector2Array(-128, 240, 40, 128, 104, 144, 104, 16, -200, 224, -216, 247, -176, 263, -160, 245)
+
+[node name="Goal3" type="Polygon2D" parent="Goal"]
+position = Vector2(0, -100)
+color = Color(1, 1, 0, 1)
+offset = Vector2(0, -100)
+polygon = PackedVector2Array(-128, 320, -128, 216, -200, 224, -240, 288, -160, 336)
+
+[node name="Goal2" type="Polygon2D" parent="Goal"]
+position = Vector2(0, -100)
+color = Color(1, 1, 0, 1)
+offset = Vector2(0, -100)
+polygon = PackedVector2Array(56, 104, 104, 144, 120, 128, 104, 16)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-380.198, -95.0495)
+points = PackedVector2Array(100.198, 335.049, 180.198, 375.049, 476.198, 183.049)
+script = ExtResource("1_ydgtj")
+
+[node name="YSortPoint" type="Node2D" parent="Line2D"]
+position = Vector2(180.198, 359.049)

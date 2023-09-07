@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://du8b8mpoy77bd"]
+[gd_scene load_steps=3 format=3 uid="uid://du8b8mpoy77bd"]
 
 [ext_resource type="Texture2D" uid="uid://cas6bixlewsms" path="res://Game_Data/Graphics/Tex/ArcadeMachine.png" id="1_uws2f"]
+[ext_resource type="Script" path="res://Game_Data/Field/sorter.gd" id="2_qye76"]
 
-[node name="ArcadeMachine" type="CanvasGroup"]
+[node name="ArcadeMachine" type="Node2D"]
 position = Vector2(-192, -280)
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
@@ -61,3 +62,11 @@ polygon = PackedVector2Array(128, 320, 192, 352, 248, 312, 248, 240, 184, 216, 1
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(216, 256)
 texture = ExtResource("1_uws2f")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-304, 112)
+points = PackedVector2Array(432, 208, 496, 240, 552, 200)
+script = ExtResource("2_qye76")
+
+[node name="YSortPoint" type="Node2D" parent="Line2D"]
+position = Vector2(496, 233)

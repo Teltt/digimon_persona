@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dppfjbrgru0gd"]
+
+[ext_resource type="Script" path="res://Game_Data/Field/sorter.gd" id="1_4qsjf"]
+
+[node name="Goal2" type="Polygon2D"]
+position = Vector2(768, 520)
+color = Color(1, 1, 0, 1)
+offset = Vector2(0, -175)
+polygon = PackedVector2Array(91.3692, 182.876, 40, 98, -234.588, 256.141, -240, 322.207, -186.038, 363.821)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-160, 280)
+rotation = -3.07123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(-177.57, 325.289, 89.3635, 130.039, 30.1274, 86.0949, -236.244, 289.325)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-368, -192)
+points = PackedVector2Array(120, 336, 180.198, 375.049, 448, 192)
+script = ExtResource("1_4qsjf")
+
+[node name="YSortPoint" type="Node2D" parent="Line2D"]
+position = Vector2(304, 240)

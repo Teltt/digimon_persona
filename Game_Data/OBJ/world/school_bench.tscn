@@ -1,34 +1,30 @@
-[gd_scene format=3 uid="uid://dao38n81vshtd"]
+[gd_scene load_steps=2 format=3 uid="uid://dao38n81vshtd"]
+
+[ext_resource type="Script" path="res://Game_Data/Field/sorter.gd" id="1_80jf4"]
 
 [node name="Node2D" type="Node2D"]
-scale = Vector2(0.505, 0.505)
 
 [node name="SchoolBench" type="Polygon2D" parent="."]
-y_sort_enabled = true
 position = Vector2(-934.653, -110.891)
 color = Color(0.619608, 0, 0.352941, 1)
 polygon = PackedVector2Array(784, 104, 1024, 200, 1088, 160, 832, 64)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-y_sort_enabled = true
 position = Vector2(-934.653, -110.891)
 color = Color(0.396078, 0, 0.168627, 1)
 polygon = PackedVector2Array(1000, 192, 1000, 264, 1024, 272, 1040, 256, 1040, 192, 1024, 200)
 
 [node name="Polygon2D3" type="Polygon2D" parent="."]
-y_sort_enabled = true
 position = Vector2(-1150.65, -198.891)
 color = Color(0.396078, 0, 0.168627, 1)
 polygon = PackedVector2Array(1000, 192, 1000, 264, 1024, 272, 1040, 256, 1040, 208, 1024, 200)
 
 [node name="Polygon2D4" type="Polygon2D" parent="."]
-y_sort_enabled = true
 position = Vector2(-1118.65, -222.891)
 color = Color(0.396078, 0, 0.168627, 1)
 polygon = PackedVector2Array(1008, 264, 1024, 272, 1048, 256, 1048, 248, 1008, 232)
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
-y_sort_enabled = true
 position = Vector2(-886.653, -142.891)
 color = Color(0.396078, 0, 0.168627, 1)
 polygon = PackedVector2Array(1000, 216, 1000, 264, 1024, 272, 1040, 256, 1040, 192, 1024, 200)
@@ -37,4 +33,12 @@ polygon = PackedVector2Array(1000, 216, 1000, 264, 1024, 272, 1040, 256, 1040, 1
 position = Vector2(-934.653, -110.891)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(784, 176, 1024, 272, 1088, 224, 840, 128)
+polygon = PackedVector2Array(784, 176, 806.653, 190.891, 990.653, 262.891, 1024, 272, 1088, 224, 840, 128)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-380.198, -95.0495)
+points = PackedVector2Array(253.465, 126.733, 285.148, 126.733, 396.04, 205.941, 484.198, 231.049, 522.772, 221.782)
+script = ExtResource("1_80jf4")
+
+[node name="YSortPoint" type="Node2D" parent="Line2D"]
+position = Vector2(372.198, 175.049)

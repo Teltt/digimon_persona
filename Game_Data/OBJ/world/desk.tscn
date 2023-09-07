@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://duqcfx8p45ksl"]
+[gd_scene load_steps=3 format=3 uid="uid://duqcfx8p45ksl"]
 
 [ext_resource type="Texture2D" uid="uid://cgo8ht5bia1x" path="res://Game_Data/Graphics/Tex/Desk.png" id="1_87wua"]
+[ext_resource type="Script" path="res://Game_Data/Field/sorter.gd" id="2_8nk30"]
 
-[node name="Desk" type="CanvasGroup"]
+[node name="Desk" type="Node2D"]
 z_index = -1
 y_sort_enabled = true
 
@@ -16,3 +17,11 @@ polygon = PackedVector2Array(-40, 72, -48, 48, -24, 8, 64, 24, 64, 32, 8, 80)
 y_sort_enabled = true
 position = Vector2(6.5, 22)
 texture = ExtResource("1_87wua")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-488, -168)
+points = PackedVector2Array(440, 200, 504, 208, 552, 192)
+script = ExtResource("2_8nk30")
+
+[node name="YSortPoint" type="Node2D" parent="Line2D"]
+position = Vector2(496, 192)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c53itgsynftef"]
+
+[node name="Checkers" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(304, 208, 352, 216, 392, 184, 344, 176)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(96, 16)
+polygon = PackedVector2Array(304, 208, 352, 216, 392, 184, 344, 176)
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+position = Vector2(8, 40)
+polygon = PackedVector2Array(304, 208, 352, 216, 392, 184, 344, 176)
+
+[node name="Polygon2D6" type="Polygon2D" parent="."]
+position = Vector2(104, 56)
+polygon = PackedVector2Array(304, 208, 352, 216, 392, 184, 344, 176)
