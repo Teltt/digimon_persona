@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MessageTree" load_steps=2 format=3 uid="uid://8bjfkehewwek"]
+
+[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="1_o7caa"]
+
+[resource]
+script = ExtResource("1_o7caa")
+is_digivolution_question = false
+line1 = "> You have school today"
+line2 = "Better get going."
+line3 = ""
+choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
+change_speaker = ""
+portrait_file_name = ""
+function_names = Array[String]([])
+skip_function = ""
+skip_expression = ""
+set_flag_dictionary = {}
+set_counter_dictionary = {}
+increment_counter_dictionary = {}
+seek_time = -1
+close_message_box = false

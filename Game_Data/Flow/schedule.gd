@@ -26,9 +26,9 @@ func spawn(node:Node2D):
 					schedule.spawn(node)
 				if is_instance_valid(scene):
 					var scene_instance = scene.instantiate()
-					node.add_child(scene_instance)
 					if  is_instance_valid(message):
 						scene_instance.message = message
+					node.add_child(scene_instance)
 					if is_instance_valid(spawn_location):
 						node.position =spawn_location.position
 		

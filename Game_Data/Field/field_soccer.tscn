@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmedpgoc6lsux"]
+[gd_scene load_steps=6 format=3 uid="uid://dmedpgoc6lsux"]
 
 [ext_resource type="PackedScene" uid="uid://c6wynmdg46x02" path="res://Game_Data/Field/field_base.tscn" id="1_pim0u"]
 [ext_resource type="Script" path="res://Game_Data/Flow/scheduler.gd" id="2_1lydm"]
 [ext_resource type="PackedScene" uid="uid://dao38n81vshtd" path="res://Game_Data/OBJ/world/school_bench.tscn" id="2_c7ipt"]
+[ext_resource type="PackedScene" uid="uid://pit6okx7gsxq" path="res://Game_Data/OBJ/FieldTransition.tscn" id="4_dcb70"]
 
 [sub_resource type="Resource" id="Resource_xr4ur"]
 script = ExtResource("2_1lydm")
@@ -353,6 +354,10 @@ polygon = PackedVector2Array(240, -272, 240, -104, 312, -144, 312, -304)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(328, -304, 320, -144, 336, -152)
 
+[node name="Polygon2D4" type="Polygon2D" parent="BG/Doors" index="3"]
+color = Color(1, 1, 1, 0.419608)
+polygon = PackedVector2Array(252.174, -104, 313.043, -56, 434.783, -136, 413.043, -184)
+
 [node name="Building" type="Polygon2D" parent="BG" index="6"]
 position = Vector2(48, 24)
 color = Color(0.666667, 0.666667, 0.666667, 1)
@@ -417,221 +422,221 @@ z_index = 1
 fit_margin = 1045.0
 clear_margin = 0.0
 
-[node name="Node2D" type="Node2D" parent="Foreground" index="0"]
+[node name="Fence" type="Node2D" parent="Foreground" index="0"]
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D" index="0"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence" index="0"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(0, 56)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D" index="1"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence" index="1"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(-176, -48)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D2" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D2" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D2" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D2" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D2" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D2" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence" index="2"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(352, 264)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D3" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D3" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D3" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D3" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D3" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D3" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D4" type="Polygon2D" parent="Foreground/Node2D" index="3"]
+[node name="Polygon2D4" type="Polygon2D" parent="Foreground/Fence" index="3"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(176, 160)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D4" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D4" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D4" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D4" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D4" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D4" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D5" type="Polygon2D" parent="Foreground/Node2D" index="4"]
+[node name="Polygon2D5" type="Polygon2D" parent="Foreground/Fence" index="4"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(712, 472)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D5" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D5" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D5" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D5" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D5" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D5" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D6" type="Polygon2D" parent="Foreground/Node2D" index="5"]
+[node name="Polygon2D6" type="Polygon2D" parent="Foreground/Fence" index="5"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(536, 368)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D6" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D6" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D6" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D6" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D6" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D6" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D7" type="Polygon2D" parent="Foreground/Node2D" index="6"]
+[node name="Polygon2D7" type="Polygon2D" parent="Foreground/Fence" index="6"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(0, 56)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D7" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D7" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D7" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D7" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D7" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D7" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D8" type="Polygon2D" parent="Foreground/Node2D" index="7"]
+[node name="Polygon2D8" type="Polygon2D" parent="Foreground/Fence" index="7"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(-176, -48)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D8" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D8" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D8" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D8" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D8" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D8" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D9" type="Polygon2D" parent="Foreground/Node2D" index="8"]
+[node name="Polygon2D9" type="Polygon2D" parent="Foreground/Fence" index="8"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(352, 264)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D9" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D9" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D9" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D9" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D9" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D9" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D10" type="Polygon2D" parent="Foreground/Node2D" index="9"]
+[node name="Polygon2D10" type="Polygon2D" parent="Foreground/Fence" index="9"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(176, 160)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D10" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D10" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D10" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D10" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D10" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D10" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D11" type="Polygon2D" parent="Foreground/Node2D" index="10"]
+[node name="Polygon2D11" type="Polygon2D" parent="Foreground/Fence" index="10"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(712, 472)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D11" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D11" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D11" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D11" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D11" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D11" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D12" type="Polygon2D" parent="Foreground/Node2D" index="11"]
+[node name="Polygon2D12" type="Polygon2D" parent="Foreground/Fence" index="11"]
 modulate = Color(0.254902, 0.266667, 0.172549, 1)
 position = Vector2(536, 368)
 color = Color(0.619608, 0.619608, 0.619608, 1)
 polygon = PackedVector2Array(-472, 472, -472, 304, -432, 272, -416, 304, -424, 504)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Node2D/Polygon2D12" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Foreground/Fence/Polygon2D12" index="0"]
 position = Vector2(96, 72)
 color = Color(0.564706, 0.564706, 0.564706, 1)
 polygon = PackedVector2Array(-472, 472, -472, 392, -528, 360, -528, 312, -472, 344, -472, 304, -432, 272, -416, 304, -418.272, 360.796, -360, 400, -368, 448, -424, 416, -424, 504)
 
-[node name="Polygon2D" type="Polygon2D" parent="Foreground/Node2D/Polygon2D12" index="1"]
+[node name="Polygon2D" type="Polygon2D" parent="Foreground/Fence/Polygon2D12" index="1"]
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D/Polygon2D12" index="2"]
+[node name="Polygon2D3" type="Polygon2D" parent="Foreground/Fence/Polygon2D12" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 
@@ -1074,3 +1079,9 @@ polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
 [node name="Polygon2D3" type="Polygon2D" parent="Foreground/Node2D3/Polygon2D12" index="2"]
 position = Vector2(96, 72)
 polygon = PackedVector2Array(-472, 312, -448, 336, -416, 304, -432, 272)
+
+[node name="Area2D" parent="." index="13" instance=ExtResource("4_dcb70")]
+position = Vector2(592, -32)
+scale = Vector2(1.695, 1.695)
+teleport_mc_to = Vector2(1792, 232)
+field = "res://Game_Data/Field/field_hallway.tscn"

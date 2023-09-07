@@ -1,30 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bt1ay6nf8u367"]
+[gd_scene load_steps=11 format=3 uid="uid://bt1ay6nf8u367"]
 
 [ext_resource type="Script" path="res://Game_Data/Field/field_base.gd" id="1_w544c"]
-[ext_resource type="Script" path="res://Game_Data/Message/Message.gd" id="2_loahb"]
+[ext_resource type="Resource" uid="uid://8bjfkehewwek" path="res://Game_Data/Message/Common/System/KickToSchool.tres" id="2_fuwf7"]
 [ext_resource type="PackedScene" uid="uid://hciwnr07pbvd" path="res://Game_Data/Flow/kicker_after_school.tscn" id="3_5hyii"]
 [ext_resource type="Script" path="res://Game_Data/Flow/schedule.gd" id="3_258fs"]
 [ext_resource type="Script" path="res://Game_Data/Flow/scheduler.gd" id="4_0ro5s"]
 [ext_resource type="Script" path="res://Game_Data/OBJ/npc.gd" id="6_0kaih"]
 [ext_resource type="Resource" uid="uid://rp0dgmer60e7" path="res://Game_Data/Message/Common/System/Progress the Day?.tres" id="7_jarch"]
-
-[sub_resource type="Resource" id="Resource_2r1pd"]
-script = ExtResource("2_loahb")
-is_digivolution_question = false
-line1 = "> You have school today"
-line2 = "Better get going."
-line3 = ""
-choices = Array[Resource("res://Game_Data/Message/MessageChoice.gd")]([])
-change_speaker = ""
-portrait_file_name = ""
-function_names = Array[String]([])
-skip_function = ""
-skip_expression = ""
-set_flag_dictionary = {}
-set_counter_dictionary = {}
-increment_counter_dictionary = {}
-seek_time = -1
-close_message_box = false
 
 [sub_resource type="Resource" id="Resource_6hpcy"]
 script = ExtResource("3_258fs")
@@ -35,7 +17,7 @@ time = 1
 to_month = 12
 to_day = 30
 child_schedule = Array[ExtResource("3_258fs")]([])
-message = SubResource("Resource_2r1pd")
+message = ExtResource("2_fuwf7")
 scene = ExtResource("3_5hyii")
 spawn_if_function = ""
 spawn_expression = ""

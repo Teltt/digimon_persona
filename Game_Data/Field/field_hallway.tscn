@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://gdej1ptecjny"]
+[gd_scene load_steps=13 format=3 uid="uid://gdej1ptecjny"]
 
 [ext_resource type="Script" path="res://Game_Data/Field/field_base.gd" id="1_h30je"]
 [ext_resource type="PackedScene" uid="uid://tuqjhu3ijh68" path="res://Game_Data/OBJ/yolei_field.tscn" id="2_5jmhr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Game_Data/Flow/schedule.gd" id="3_0hsh1"]
 [ext_resource type="Script" path="res://Game_Data/OBJ/npc.gd" id="7_txk36"]
 [ext_resource type="Resource" uid="uid://bldcxccwduyi7" path="res://Game_Data/Message/Common/System/Go Home?.tres" id="8_3ifi2"]
+[ext_resource type="PackedScene" uid="uid://pit6okx7gsxq" path="res://Game_Data/OBJ/FieldTransition.tscn" id="9_o8p73"]
 
 [sub_resource type="Resource" id="Resource_8wkaj"]
 script = ExtResource("3_0hsh1")
@@ -148,3 +149,13 @@ polygon = PackedVector2Array(968, 8, 968, -160, 1048, -200, 1048, -32)
 position = Vector2(-1232, 688)
 color = Color(0.521569, 0.278431, 0.211765, 1)
 polygon = PackedVector2Array(968, 8, 968, -160, 1048, -200, 1048, -40)
+
+[node name="Field_Soccer" type="Marker2D" parent="."]
+position = Vector2(1792, 232)
+gizmo_extents = 50.0
+
+[node name="Area2D" parent="Field_Soccer" instance=ExtResource("9_o8p73")]
+position = Vector2(0, 0)
+scale = Vector2(2.082, 2.082)
+teleport_mc_to = Vector2(592, -32)
+field = "res://Game_Data/Field/field_soccer.tscn"
