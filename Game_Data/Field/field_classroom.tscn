@@ -37,6 +37,7 @@ script = ExtResource("1_kgt0w")
 scheduler = SubResource("Resource_k5ok6")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
 polygon = PackedVector2Array(336, 0, 904, 64, 952, 208, 792, 632, 104, 480, 120, 464, 760, 600, 832, 408, 888, 264, 488, 200, 448, 264, 296, 224, 120, 456, 128, 256)
@@ -78,7 +79,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="Polygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-64, -64, -64, 704, 1216, 704, 1216, -64, -256, -64, -256, -128, 1280, -128, 1280, 768, -264, 768, -256, -64)
+polygon = PackedVector2Array(0, 0, 24, 624, 1152, 648, 1152, 0, 0, 0, -256, -64, -256, -128, 1280, -128, 1280, 768, -264, 768, -256, -64)
 
 [node name="Enterance" type="Marker2D" parent="."]
 position = Vector2(840, 320)
@@ -89,6 +90,7 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("7_qvl26")
 teleport_mc_to = Vector2(768, 120)
+teleport_mc_to_node = "To_Classroom"
 field = "res://Game_Data/Field/field_hallway.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="To_Hallway"]

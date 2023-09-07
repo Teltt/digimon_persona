@@ -1,0 +1,269 @@
+[gd_scene load_steps=9 format=3 uid="uid://c30b1r2mpj05k"]
+
+[ext_resource type="PackedScene" uid="uid://c6wynmdg46x02" path="res://Game_Data/Field/field_base.tscn" id="1_6bf3s"]
+[ext_resource type="Script" path="res://Game_Data/Flow/scheduler.gd" id="2_cjyla"]
+[ext_resource type="PackedScene" uid="uid://c53itgsynftef" path="res://Game_Data/OBJ/world/checkers.tscn" id="2_lglev"]
+[ext_resource type="PackedScene" uid="uid://bhnfwo16ayaa3" path="res://Game_Data/OBJ/world/card_stand.tscn" id="4_akbag"]
+[ext_resource type="PackedScene" uid="uid://b4yjrbl6g4sbl" path="res://Game_Data/OBJ/world/market_counter.tscn" id="5_2w4vo"]
+[ext_resource type="PackedScene" uid="uid://x67apvhxjuuu" path="res://Game_Data/OBJ/world/full_shelf.tscn" id="5_63bms"]
+[ext_resource type="PackedScene" uid="uid://cbmgkskjep5e" path="res://Game_Data/OBJ/world/drink_vending_machine.tscn" id="6_l5wl5"]
+
+[sub_resource type="Resource" id="Resource_wfvg3"]
+script = ExtResource("2_cjyla")
+schedules = Array[Resource("res://Game_Data/Flow/schedule.gd")]([])
+
+[node name="field" instance=ExtResource("1_6bf3s")]
+y_sort_enabled = false
+scheduler = SubResource("Resource_wfvg3")
+
+[node name="Default_MC_Pos" parent="." index="0"]
+position = Vector2(528, 352)
+
+[node name="BG" type="Node2D" parent="." index="2"]
+z_index = -4
+metadata/_edit_group_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="BG" index="0"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(56, -160, -120, 80, -80, 768, 1224, 728, 1240, -80)
+
+[node name="Camera" type="StaticBody2D" parent="BG" index="1"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BG/Camera" index="0"]
+polygon = PackedVector2Array(0, 0, 0, 648, 1152, 648, 1152, 0, -88, 0, -88, -184, 1352, -184, 1352, 744, -88, 744, -88, 0)
+
+[node name="Room" type="Polygon2D" parent="BG" index="2"]
+color = Color(0.733333, 0.733333, 0.733333, 1)
+polygon = PackedVector2Array(104, 368, 872, 496, 1112, 304, 344, 176)
+
+[node name="Checkers" type="Node2D" parent="BG/Room" index="0"]
+
+[node name="Checkers" parent="BG/Room/Checkers" index="0" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+
+[node name="Checkers2" parent="BG/Room/Checkers" index="1" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(-80, 64)
+
+[node name="Checkers3" parent="BG/Room/Checkers" index="2" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(-160, 128)
+
+[node name="Checkers4" parent="BG/Room/Checkers" index="3" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(192, 32)
+
+[node name="Checkers5" parent="BG/Room/Checkers" index="4" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(112, 96)
+
+[node name="Checkers6" parent="BG/Room/Checkers" index="5" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(32, 160)
+
+[node name="Checkers7" parent="BG/Room/Checkers" index="6" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(384, 64)
+
+[node name="Checkers8" parent="BG/Room/Checkers" index="7" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(304, 128)
+
+[node name="Checkers9" parent="BG/Room/Checkers" index="8" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(224, 192)
+
+[node name="Checkers10" parent="BG/Room/Checkers" index="9" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(480, 80)
+
+[node name="Checkers11" parent="BG/Room/Checkers" index="10" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(400, 144)
+
+[node name="Checkers12" parent="BG/Room/Checkers" index="11" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(320, 208)
+
+[node name="Checkers13" parent="BG/Room/Checkers" index="12" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(576, 96)
+
+[node name="Checkers14" parent="BG/Room/Checkers" index="13" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(496, 160)
+
+[node name="Checkers15" parent="BG/Room/Checkers" index="14" instance=ExtResource("2_lglev")]
+modulate = Color(0.709804, 0.282353, 0.466667, 1)
+position = Vector2(416, 224)
+
+[node name="Node2D" type="Node2D" parent="BG/Room/Checkers" index="15"]
+
+[node name="Polygon2D3" type="Polygon2D" parent="BG/Room" index="1"]
+color = Color(0.733333, 0.733333, 0.733333, 1)
+polygon = PackedVector2Array(1112, 304, 1112, 128, 344, 0, 344, 176)
+
+[node name="Polygon2D4" type="Polygon2D" parent="BG/Room" index="2"]
+color = Color(0.627451, 0.627451, 0.627451, 1)
+polygon = PackedVector2Array(104, 368, 104, 160, 344, 0, 344, 176)
+
+[node name="Stand" parent="BG" index="3" instance=ExtResource("4_akbag")]
+
+[node name="Stand2" parent="BG" index="4" instance=ExtResource("4_akbag")]
+position = Vector2(299, 108)
+
+[node name="OOB" type="StaticBody2D" parent="BG" index="5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BG/OOB" index="0"]
+polygon = PackedVector2Array(104, 368, 344, 176, 1112, 304, 872, 496, 152, 376, 144, 456, 928, 568, 1176, 320, 1080, 152, 296, 48, 40, 304, 88, 448, 144, 456, 152, 376)
+
+[node name="Window" type="Node2D" parent="BG" index="6"]
+
+[node name="Polygon2D2" type="Polygon2D" parent="BG/Window" index="0"]
+color = Color(0.462745, 0.462745, 0.462745, 1)
+polygon = PackedVector2Array(560, 152, 560, 96, 736, 120, 736, 176)
+
+[node name="Polygon2D5" type="Polygon2D" parent="BG/Window" index="1"]
+position = Vector2(112, 24)
+scale = Vector2(0.83, 0.83)
+color = Color(0.27451, 0.756863, 0.866667, 1)
+polygon = PackedVector2Array(560, 152, 560, 96, 736, 120, 736, 176)
+
+[node name="Polygon2D6" type="Polygon2D" parent="BG/Window" index="2"]
+position = Vector2(112, 24)
+scale = Vector2(0.83, 0.83)
+color = Color(0.768627, 0.952941, 0.921569, 1)
+polygon = PackedVector2Array(636.145, 144.578, 578.313, 106.024, 655.422, 134.94, 684.337, 154.217)
+
+[node name="Polygon2D7" type="Polygon2D" parent="BG/Window" index="3"]
+position = Vector2(144, 24)
+scale = Vector2(0.83, 0.83)
+color = Color(0.768627, 0.952941, 0.921569, 1)
+polygon = PackedVector2Array(636.145, 144.578, 578.313, 106.024, 655.422, 134.94, 684.337, 154.217)
+
+[node name="Camera2" type="Node2D" parent="BG" index="7"]
+position = Vector2(-133, -1)
+scale = Vector2(1.385, 1.385)
+
+[node name="Polygon2D" type="Polygon2D" parent="BG/Camera2" index="0"]
+color = Color(0.207843, 0.207843, 0.207843, 1)
+polygon = PackedVector2Array(326, 12, 332, 18, 354, 22, 362, 20, 376, 5, 344, 0)
+
+[node name="Polygon2D2" type="Polygon2D" parent="BG/Camera2" index="1"]
+color = Color(0.239216, 0.239216, 0.239216, 0.752941)
+polygon = PackedVector2Array(326, 12, 362, 20, 376, 5, 344, 0)
+
+[node name="Polygon2D4" type="Polygon2D" parent="BG/Camera2" index="2"]
+color = Color(0.301961, 0.301961, 0.301961, 1)
+polygon = PackedVector2Array(338, 28, 346, 35, 352, 33, 350, 27, 339, 26, 335, 27)
+
+[node name="Polygon2D" type="Polygon2D" parent="BG/Camera2/Polygon2D4" index="0"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(347, 31, 349, 29, 351, 31, 349, 33)
+
+[node name="Polygon2D" type="Polygon2D" parent="BG/Camera2/Polygon2D4/Polygon2D" index="0"]
+polygon = PackedVector2Array(348, 31, 349, 30, 348, 30)
+
+[node name="Polygon2D3" type="Polygon2D" parent="BG/Camera2" index="3"]
+color = Color(0.207843, 0.207843, 0.207843, 1)
+polygon = PackedVector2Array(338, 28, 338, 19, 350, 21, 345, 29, 346, 35, 334, 31, 335, 27)
+
+[node name="Polygon2D5" type="Polygon2D" parent="BG/Camera2" index="4"]
+color = Color(0.160784, 0.160784, 0.160784, 1)
+polygon = PackedVector2Array(338, 28, 338, 19, 350, 21, 345, 29)
+
+[node name="Polygon2D6" type="Polygon2D" parent="BG/Camera2" index="5"]
+color = Color(0.294118, 0.294118, 0.294118, 1)
+polygon = PackedVector2Array(348, 27, 352, 21, 350, 21, 345, 29)
+
+[node name="Counter" parent="." index="3" instance=ExtResource("5_2w4vo")]
+
+[node name="Polygon2D" type="Polygon2D" parent="Counter" index="5"]
+position = Vector2(-39, 43)
+rotation = -0.0750492
+skew = -0.0750492
+polygon = PackedVector2Array(544, 232, 528, 248, 560, 256, 576, 240)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Counter/Polygon2D" index="0"]
+color = Color(0.435294, 0.435294, 0.435294, 1)
+polygon = PackedVector2Array(528, 224, 528, 248, 560, 256, 560, 232)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Counter/Polygon2D" index="1"]
+color = Color(0, 0.364706, 0, 1)
+polygon = PackedVector2Array(528, 224, 568, 232, 560, 232)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Counter/Polygon2D" index="2"]
+color = Color(0.301961, 0.301961, 0.301961, 1)
+polygon = PackedVector2Array(568, 232, 576, 240, 560, 256, 560, 232)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Counter/Polygon2D/Polygon2D6" index="0"]
+color = Color(0.435294, 0.435294, 0.435294, 1)
+polygon = PackedVector2Array(536, 226, 536, 214, 549, 217, 550, 230)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Counter/Polygon2D/Polygon2D6" index="1"]
+color = Color(0.313726, 0.313726, 0.313726, 1)
+polygon = PackedVector2Array(553, 229, 552, 215, 549, 217, 550, 230)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Counter/Polygon2D/Polygon2D6" index="2"]
+color = Color(0.658824, 0.658824, 0.658824, 1)
+polygon = PackedVector2Array(539, 212, 552, 215, 549, 217, 536, 214)
+
+[node name="Polygon2D" type="Polygon2D" parent="Counter/Polygon2D" index="3"]
+color = Color(0.737255, 0.737255, 0.737255, 1)
+polygon = PackedVector2Array(580.41, 242.242, 587.743, 246.844, 593.3, 243.22, 586.809, 239.693)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Counter/Polygon2D/Polygon2D" index="0"]
+color = Color(0.372549, 0.372549, 0.372549, 1)
+polygon = PackedVector2Array(587.743, 246.844, 586.393, 255.844, 592.101, 251.22, 593.3, 243.22)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Counter/Polygon2D/Polygon2D" index="1"]
+color = Color(0.541176, 0.541176, 0.541176, 1)
+polygon = PackedVector2Array(587.743, 246.844, 586.393, 255.844, 579.06, 251.242, 580.41, 242.242)
+
+[node name="Polygon2D" type="Polygon2D" parent="Counter/Polygon2D/Polygon2D" index="2"]
+color = Color(0.490196, 0.490196, 0.490196, 1)
+polygon = PackedVector2Array(585.518, 241.618, 586.268, 236.618, 590.234, 236.919, 589.184, 243.919)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Counter/Polygon2D/Polygon2D" index="3"]
+color = Color(0.490196, 0.490196, 0.490196, 1)
+polygon = PackedVector2Array(583.201, 230.317, 586.268, 236.618, 590.234, 236.919, 594.95, 232.22)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Counter/Polygon2D/Polygon2D" index="4"]
+position = Vector2(-2.13306, 0.849621)
+color = Color(0.792157, 0.792157, 0.792157, 1)
+polygon = PackedVector2Array(583.201, 230.317, 586.268, 236.618, 590.234, 236.919, 594.95, 232.22, 586.326, 229.543)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Counter/Polygon2D/Polygon2D" index="5"]
+position = Vector2(265.295, 162.68)
+scale = Vector2(0.545, 0.305)
+color = Color(0.792157, 0.137255, 0.0431373, 1)
+polygon = PackedVector2Array(583.201, 230.317, 586.268, 236.618, 590.234, 236.919, 594.95, 232.22, 586.326, 229.543)
+
+[node name="Shelves" type="Node2D" parent="." index="4"]
+
+[node name="FullShelf" parent="Shelves" index="0" instance=ExtResource("5_63bms")]
+y_sort_enabled = false
+
+[node name="FullShelf2" parent="Shelves" index="1" instance=ExtResource("5_63bms")]
+y_sort_enabled = false
+position = Vector2(381, 24)
+
+[node name="FullShelf3" parent="Shelves" index="2" instance=ExtResource("5_63bms")]
+y_sort_enabled = false
+position = Vector2(426, -16)
+
+[node name="FullShelf4" parent="Shelves" index="3" instance=ExtResource("5_63bms")]
+y_sort_enabled = false
+position = Vector2(464, 80)
+
+[node name="FullShelf5" parent="Shelves" index="4" instance=ExtResource("5_63bms")]
+y_sort_enabled = false
+position = Vector2(510, 40)
+
+[node name="FullShelf6" parent="Shelves" index="5" instance=ExtResource("5_63bms")]
+y_sort_enabled = false
+position = Vector2(555, 0)
+
+[node name="Drinks" parent="." index="5" instance=ExtResource("6_l5wl5")]

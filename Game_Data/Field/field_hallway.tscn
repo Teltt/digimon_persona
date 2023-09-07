@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://gdej1ptecjny"]
+[gd_scene load_steps=11 format=3 uid="uid://gdej1ptecjny"]
 
 [ext_resource type="Script" path="res://Game_Data/Field/field_base.gd" id="1_h30je"]
 [ext_resource type="PackedScene" uid="uid://tuqjhu3ijh68" path="res://Game_Data/OBJ/yolei_field.tscn" id="2_5jmhr"]
@@ -6,8 +6,6 @@
 [ext_resource type="Script" path="res://Game_Data/Flow/scheduler.gd" id="2_qmked"]
 [ext_resource type="Script" path="res://Game_Data/OBJ/FieldTransition.gd" id="2_tjvqw"]
 [ext_resource type="Script" path="res://Game_Data/Flow/schedule.gd" id="3_0hsh1"]
-[ext_resource type="Script" path="res://Game_Data/OBJ/npc.gd" id="7_txk36"]
-[ext_resource type="Resource" uid="uid://bldcxccwduyi7" path="res://Game_Data/Message/Common/System/Go Home?.tres" id="8_3ifi2"]
 [ext_resource type="PackedScene" uid="uid://pit6okx7gsxq" path="res://Game_Data/OBJ/FieldTransition.tscn" id="9_o8p73"]
 
 [sub_resource type="Resource" id="Resource_8wkaj"]
@@ -59,19 +57,22 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_tjvqw")
 teleport_mc_to = Vector2(840, 320)
+teleport_mc_to_node = "To_Hallway"
 field = "res://Game_Data/Field/field_classroom.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="To_Classroom"]
 shape = SubResource("CircleShape2D_jqrwb")
 
-[node name="To_Home" type="Area2D" parent="."]
-position = Vector2(-424, 976)
+[node name="To_Outside" type="Area2D" parent="."]
+position = Vector2(-408, 960)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("7_txk36")
-message = ExtResource("8_3ifi2")
+script = ExtResource("2_tjvqw")
+teleport_mc_to = Vector2(840, 320)
+teleport_mc_to_node = "ToHallway"
+field = "res://Game_Data/Field/field_school_street.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="To_Home"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="To_Outside"]
 shape = SubResource("CircleShape2D_jqrwb")
 
 [node name="Yolei_Hangout_Spot" type="Marker2D" parent="."]
