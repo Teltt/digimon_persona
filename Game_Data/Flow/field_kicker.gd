@@ -7,7 +7,9 @@ var message:MessageTree
 @export var time = Game.TimeOfDay.Evening
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	await get_tree().process_frame
+	Game.main.display_msg_box(message)
+
+	await Game.main.msg_box.closed
 	if change_time:
 		Game.main.change_time(time)
 	Game.main.load_new_field(load(field))

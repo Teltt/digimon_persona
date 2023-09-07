@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main_real_life.gd" id="1_hmi25"]
 [ext_resource type="PackedScene" uid="uid://b03aadav3mbkg" path="res://Game_Data/UI_Scenes/msg_box.tscn" id="1_ifdf8"]
-[ext_resource type="PackedScene" uid="uid://bt1ay6nf8u367" path="res://Game_Data/Field/field_bedroom.tscn" id="2_p7a5j"]
+[ext_resource type="PackedScene" uid="uid://dmedpgoc6lsux" path="res://Game_Data/Field/field_soccer.tscn" id="2_k6vxm"]
 [ext_resource type="PackedScene" uid="uid://xb8liftebxpq" path="res://Game_Data/Battle/battle.tscn" id="4_cdjs2"]
 [ext_resource type="PackedScene" uid="uid://dk58hfsmunixh" path="res://Game_Data/OBJ/mc_field.tscn" id="4_d1r0y"]
 [ext_resource type="Script" path="res://Game_Data/UI_Scenes/Camera.gd" id="5_it8kr"]
@@ -17,7 +17,7 @@ size = Vector2(1152, 648)
 process_mode = 3
 script = ExtResource("1_hmi25")
 
-[node name="field" parent="." instance=ExtResource("2_p7a5j")]
+[node name="field" parent="." instance=ExtResource("2_k6vxm")]
 
 [node name="mc_field" parent="field" instance=ExtResource("4_d1r0y")]
 position = Vector2(552, 280)
